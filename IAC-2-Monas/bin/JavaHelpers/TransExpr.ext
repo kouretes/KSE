@@ -1,0 +1,52 @@
+import IAC;
+   
+boolean HasEvent( String str ) :
+   JAVA JavaHelpers.TransExpr.HasEvent(java.lang.String);
+   
+boolean HasCondition( String str ) :
+   JAVA JavaHelpers.TransExpr.HasCondition(java.lang.String);
+   
+boolean HasAction( String str ) :
+   JAVA JavaHelpers.TransExpr.HasAction(java.lang.String);
+   
+String getEventOfExpression( String str ) :
+   JAVA JavaHelpers.TransExpr.getEventOfExpression(java.lang.String);
+   
+String getConditionOfExpression( String str ) :
+   JAVA JavaHelpers.TransExpr.getConditionOfExpression(java.lang.String);
+   
+String getActionOfExpression( String str ) :
+   JAVA JavaHelpers.TransExpr.getActionOfExpression(java.lang.String);
+   
+   
+   
+   
+   
+   
+String InitVarCondExpr( String str ) :
+   JAVA JavaHelpers.TransExpr.InitVarCondExpr(java.lang.String);
+   
+String GetVarName( String str ) :
+   JAVA JavaHelpers.TransExpr.GetVarName(java.lang.String);
+   
+String ReadVarCondExpr( String str ) :
+   JAVA JavaHelpers.TransExpr.ReadVarCondExpr(java.lang.String);
+   
+String EvalCondExpr( String str  ) :
+   JAVA JavaHelpers.TransExpr.EvalCondExpr(java.lang.String);
+    
+String EvalCondExprLogger( String str  , String name) :
+   JAVA JavaHelpers.TransExpr.EvalCondExprLogger(java.lang.String, java.lang.String); 
+   
+   
+   
+   
+   
+String CreateVarActionExpr( String str ) :
+   JAVA JavaHelpers.TransExpr.CreateVarActionExpr(java.lang.String);   
+   
+String CreateVarTimeoutActionExpr( String str ) :
+   JAVA JavaHelpers.TransExpr.CreateVarTimeoutActionExpr(java.lang.String);
+   
+String ExecuteActionExpr( String str ) :
+   JAVA JavaHelpers.TransExpr.ExecuteActionExpr(java.lang.String);

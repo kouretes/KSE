@@ -1,0 +1,20 @@
+«IMPORT IAC»
+«EXTENSION JavaHelpers::NodeHelper»
+«EXTENSION JavaHelpers::TransExpr»
+
+«DEFINE Event(String modelname) FOR IAC::Transition»
+	«IF HasEvent(TE)-»
+		«FILE TransitionName(name)+".h" transitions_outlet»
+#include "architecture/statechartEngine/IEvent.h"
+
+class «EventName(name)» : public statechart_engine::IEvent {
+			
+public:
+
+};
+
+		«ENDFILE»		
+	IEvent* «EventNameInst(name)» = new «EventName(name)»;
+	_events.push_back( «EventNameInst(name)» );
+	«ENDIF-»
+«ENDDEFINE»

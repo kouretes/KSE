@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IAC:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:IAC="http://www.amcl.tuc.gr/aseme/metamodels/IAC" name="test">
+  <nodes name="player" type="OR" label="0"/>
+  <nodes name="0.1" type="START" label="0.1" Father_of="//@nodes.0"/>
+  <nodes name="_open_group_play_one_or_more_times__or_NoPlay_one_or_more_times__close_group_" type="OR" label="0.2" Father_of="//@nodes.0"/>
+  <nodes name="0.2.1" type="START" label="0.2.1" Father_of="//@nodes.2"/>
+  <nodes name="0.2.2" type="CONDITION" label="0.2.2" Father_of="//@nodes.2"/>
+  <nodes name="play_one_or_more_times_" type="OR" label="0.2.3" Father_of="//@nodes.2"/>
+  <nodes name="0.2.3.1" type="START" label="0.2.3.1" Father_of="//@nodes.5"/>
+  <nodes name="play" type="OR" label="0.2.3.2" Father_of="//@nodes.5"/>
+  <nodes name="0.2.3.2.1" type="START" label="0.2.3.2.1" Father_of="//@nodes.7"/>
+  <nodes name="0.2.3.2.2" type="CONDITION" label="0.2.3.2.2" Father_of="//@nodes.7"/>
+  <nodes name="ApproachBall" type="BASIC" label="0.2.3.2.3" Father_of="//@nodes.7"/>
+  <nodes name="Scan" type="BASIC" label="0.2.3.2.4" Father_of="//@nodes.7"/>
+  <nodes name="Kick" type="BASIC" label="0.2.3.2.5" Father_of="//@nodes.7"/>
+  <nodes name="0.2.3.2.6" type="END" label="0.2.3.2.6" Father_of="//@nodes.7"/>
+  <nodes name="0.2.3.3" type="END" label="0.2.3.3" Father_of="//@nodes.5"/>
+  <nodes name="NoPlay_one_or_more_times_" type="OR" label="0.2.4" Father_of="//@nodes.2"/>
+  <nodes name="0.2.4.1" type="START" label="0.2.4.1" Father_of="//@nodes.15"/>
+  <nodes name="NoPlay" type="BASIC" label="0.2.4.2" Father_of="//@nodes.15"/>
+  <nodes name="0.2.4.3" type="END" label="0.2.4.3" Father_of="//@nodes.15"/>
+  <nodes name="0.2.5" type="END" label="0.2.5" Father_of="//@nodes.2"/>
+  <nodes name="0.3" type="END" label="0.3" Father_of="//@nodes.0"/>
+  <transitions source="//@nodes.3" target="//@nodes.4" name="0.2.1TO0.2.2"/>
+  <transitions source="//@nodes.4" target="//@nodes.5" name="0.2.2TOplay_one_or_more_times_"/>
+  <transitions source="//@nodes.4" target="//@nodes.15" name="0.2.2TONoPlay_one_or_more_times_"/>
+  <transitions source="//@nodes.15" target="//@nodes.19" name="NoPlay_one_or_more_times_TO0.2.5"/>
+  <transitions source="//@nodes.5" target="//@nodes.19" name="play_one_or_more_times_TO0.2.5"/>
+  <transitions source="//@nodes.8" target="//@nodes.9" name="0.2.3.2.1TO0.2.3.2.2"/>
+  <transitions source="//@nodes.9" target="//@nodes.10" name="0.2.3.2.2TOApproachBall"/>
+  <transitions source="//@nodes.9" target="//@nodes.11" name="0.2.3.2.2TOScan"/>
+  <transitions source="//@nodes.9" target="//@nodes.12" name="0.2.3.2.2TOKick"/>
+  <transitions source="//@nodes.12" target="//@nodes.13" name="KickTO0.2.3.2.6"/>
+  <transitions source="//@nodes.11" target="//@nodes.13" name="ScanTO0.2.3.2.6"/>
+  <transitions source="//@nodes.10" target="//@nodes.13" name="ApproachBallTO0.2.3.2.6"/>
+  <transitions source="//@nodes.6" target="//@nodes.7" name="0.2.3.1TOplay"/>
+  <transitions source="//@nodes.7" target="//@nodes.7" name="playTOplay"/>
+  <transitions source="//@nodes.7" target="//@nodes.14" name="playTO0.2.3.3"/>
+  <transitions source="//@nodes.16" target="//@nodes.17" name="0.2.4.1TONoPlay"/>
+  <transitions source="//@nodes.17" target="//@nodes.17" name="NoPlayTONoPlay"/>
+  <transitions source="//@nodes.17" target="//@nodes.18" name="NoPlayTO0.2.4.3"/>
+  <transitions source="//@nodes.1" target="//@nodes.2" name="0.1TO_open_group_play_one_or_more_times__or_NoPlay_one_or_more_times__close_group_"/>
+  <transitions source="//@nodes.2" target="//@nodes.2" name="_open_group_play_one_or_more_times__or_NoPlay_one_or_more_times__close_group_TO_open_group_play_one_or_more_times__or_NoPlay_one_or_more_times__close_group_"/>
+  <transitions source="//@nodes.2" target="//@nodes.20" name="_open_group_play_one_or_more_times__or_NoPlay_one_or_more_times__close_group_TO0.3"/>
+</IAC:Model>

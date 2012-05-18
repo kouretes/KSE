@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="KSE" uid="statechart.diagram.app" id="StateChartDesign.diagram.product" application="StateChartDesign.diagram.StateChartApplication" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/StateChartDesign.diagram/icons/KSE128x128.gif"/>
+      <text>
+         KSE - Kouretes StateChart Editor
+Beta Version 1.0
+
+Developer : Topalidou - Kyniazopoulou Angeliki
+
+(c) Copyright 2012
+This is an Eclipse products and includes software developed
+by org.eclipse.com , apache.com and ibm.com
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/StateChartDesign.diagram/icons/KSE16x16.gif" i32="/StateChartDesign.diagram/icons/KSE32x32.gif" i64="/StateChartDesign.diagram/icons/KSE64x64.gif" i128="/StateChartDesign.diagram/icons/KSE128x128.gif"/>
+
+   <splash
+      location="StateChartDesign.diagram"
+      startupProgressRect="5,275,445,15"
+      startupMessageRect="7,252,445,20"
+      startupForegroundColor="000000" />
+   <launcher name="KSE">
+      <linux icon="/StateChartDesign.diagram/icons/KSE.xpm"/>
+      <solaris/>
+      <win useIco="false">
+         <bmp
+            winSmallLow="/StateChartDesign.diagram/icons/KSE16x16.bmp"/>
+      </win>
+   </launcher>
+
+   <vm>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</windows>
+   </vm>
+
+   <license>
+        <text>
+   Kouretes StateChart Editor KSE
+         </text>
+   </license>
+
+   <plugins>
+      <plugin id="StateChartDesign"/>
+      <plugin id="StateChartDesign.diagram"/>
+      <plugin id="StateChartDesign.edit"/>
+      <plugin id="com.ibm.icu"/>
+      <plugin id="javax.transaction" fragment="true"/>
+      <plugin id="lpg.runtime.java"/>
+      <plugin id="org.apache.batik.bridge"/>
+      <plugin id="org.apache.batik.css"/>
+      <plugin id="org.apache.batik.dom"/>
+      <plugin id="org.apache.batik.dom.svg"/>
+      <plugin id="org.apache.batik.ext.awt"/>
+      <plugin id="org.apache.batik.parser"/>
+      <plugin id="org.apache.batik.pdf"/>
+      <plugin id="org.apache.batik.svggen"/>
+      <plugin id="org.apache.batik.transcoder"/>
+      <plugin id="org.apache.batik.util"/>
+      <plugin id="org.apache.batik.util.gui"/>
+      <plugin id="org.apache.batik.xml"/>
+      <plugin id="org.eclipse.compare.core"/>
+      <plugin id="org.eclipse.core.commands"/>
+      <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.databinding"/>
+      <plugin id="org.eclipse.core.databinding.beans"/>
+      <plugin id="org.eclipse.core.databinding.observable"/>
+      <plugin id="org.eclipse.core.databinding.property"/>
+      <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.filesystem"/>
+      <plugin id="org.eclipse.core.filesystem.linux.x86" fragment="true"/>
+      <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.resources"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
+      <plugin id="org.eclipse.core.variables"/>
+      <plugin id="org.eclipse.draw2d"/>
+      <plugin id="org.eclipse.emf.common"/>
+      <plugin id="org.eclipse.emf.common.ui"/>
+      <plugin id="org.eclipse.emf.ecore"/>
+      <plugin id="org.eclipse.emf.ecore.change"/>
+      <plugin id="org.eclipse.emf.ecore.edit"/>
+      <plugin id="org.eclipse.emf.ecore.xmi"/>
+      <plugin id="org.eclipse.emf.edit"/>
+      <plugin id="org.eclipse.emf.edit.ui"/>
+      <plugin id="org.eclipse.emf.transaction"/>
+      <plugin id="org.eclipse.emf.validation"/>
+      <plugin id="org.eclipse.emf.workspace"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.p2.core"/>
+      <plugin id="org.eclipse.equinox.p2.engine"/>
+      <plugin id="org.eclipse.equinox.p2.metadata"/>
+      <plugin id="org.eclipse.equinox.p2.metadata.repository"/>
+      <plugin id="org.eclipse.equinox.p2.repository"/>
+      <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.equinox.security"/>
+      <plugin id="org.eclipse.gef"/>
+      <plugin id="org.eclipse.gmf.runtime.common.core"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.action"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.printing"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.printing.win32" fragment="true"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.services"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.services.action"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.services.properties"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.core"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.actions"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.printing"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.providers"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.render"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
+      <plugin id="org.eclipse.gmf.runtime.draw2d.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.draw2d.ui.render"/>
+      <plugin id="org.eclipse.gmf.runtime.draw2d.ui.render.awt"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.clipboard.core"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.commands.core"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.core"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.type.core"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.ui.properties"/>
+      <plugin id="org.eclipse.gmf.runtime.gef.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.notation"/>
+      <plugin id="org.eclipse.help"/>
+      <plugin id="org.eclipse.jface"/>
+      <plugin id="org.eclipse.jface.databinding"/>
+      <plugin id="org.eclipse.jface.text"/>
+      <plugin id="org.eclipse.ocl"/>
+      <plugin id="org.eclipse.ocl.ecore"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.swt"/>
+      <plugin id="org.eclipse.swt.gtk.linux.x86" fragment="true"/>
+      <plugin id="org.eclipse.team.core"/>
+      <plugin id="org.eclipse.text"/>
+      <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.console"/>
+      <plugin id="org.eclipse.ui.forms"/>
+      <plugin id="org.eclipse.ui.ide"/>
+      <plugin id="org.eclipse.ui.views"/>
+      <plugin id="org.eclipse.ui.views.properties.tabbed"/>
+      <plugin id="org.eclipse.ui.workbench"/>
+      <plugin id="org.eclipse.ui.workbench.texteditor"/>
+      <plugin id="org.w3c.css.sac"/>
+      <plugin id="org.w3c.dom.events"/>
+      <plugin id="org.w3c.dom.smil"/>
+      <plugin id="org.w3c.dom.svg"/>
+   </plugins>
+
+
+</product>

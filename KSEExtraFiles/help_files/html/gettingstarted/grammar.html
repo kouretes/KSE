@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Grammar</TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.3  (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="angelica ">
+	<META NAME="CHANGED" CONTENT="20120218;2104300">
+	<!-- Reply to  (02/18/2012, 02:08): "ML: <META"
+ -->
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H1>Second Step – Grammar Syntax For Transition's expression</H1>
+<P><BR><BR>
+</P>
+<P><B>transitionExpression</B> = [ event ] [ &quot;[&quot; condition
+&quot;]&quot; ] [ /actions ] 
+</P>
+<P><BR><BR>
+</P>
+<P><B>event</B> = string 
+</P>
+<P><BR><BR>
+</P>
+<P><B>condition</B> = expr 
+</P>
+<P>| expr (compOp | logicOp) condition 
+</P>
+<P>| &quot;(&quot;condition&quot;)&quot; 
+</P>
+<P>| notOp condition 
+</P>
+<P><BR><BR>
+</P>
+<P><B>actions</B> = TimeoutAction 
+</P>
+<P>| Actions 
+</P>
+<P><BR><BR>
+</P>
+<P><B>Actions</B> = Actions connectiveOp action 
+</P>
+<P><BR><BR>
+</P>
+<P><B>action</B> = &quot;process_messages&quot; 
+</P>
+<P>| &quot;publish_all&quot; 
+</P>
+<P>| &quot;publish&quot; &quot;.&quot; topic &quot;.&quot; commType
+&quot;.&quot; msgType &quot;.&quot; membersetfunction “(“ val “)”
+</P>
+<P><BR><BR>
+</P>
+<P><B>TimeoutAction</B> = TimeoutAction&quot;.&quot;topic&quot;.&quot;time
+</P>
+<P><BR><BR>
+</P>
+<P><B>expr</B> = varVal | func &quot;(&quot; args &quot;)&quot; 
+</P>
+<P><BR><BR>
+</P>
+<P><B>func</B> = &lt;any_valid_cpp_decleared_function_name&gt; 
+</P>
+<P>| TimeoutCheck “(” topic “)”</P>
+<P><BR><BR>
+</P>
+<P><B>args</B> = varVal 
+</P>
+<P>| varVal &quot;,&quot; args 
+</P>
+<P><BR><BR>
+</P>
+<P><B>varVal</B> = variable | value 
+</P>
+<P><BR><BR>
+</P>
+<P><B>value</B> = constant | stringLiteral | number+</P>
+<P><BR><BR>
+</P>
+<P><B>compOp</B> = &quot;&lt;&quot; | &quot;&lt;=&quot; | &quot;&gt;&quot;
+| &quot;&gt;=&quot; | &quot;==&quot; | &quot;!=&quot; 
+</P>
+<P><BR><BR>
+</P>
+<P><B>logicOp</B> = &quot;&amp;&amp;&quot; | &quot;||&quot; 
+</P>
+<P><BR><BR>
+</P>
+<P><B>notOp</B> = &quot;!&quot; 
+</P>
+<P><BR><BR>
+</P>
+<P><B>connectiveOp</B> = &quot;;&quot; 
+</P>
+<P><BR><BR>
+</P>
+<P><B>message</B> = topic &quot;.&quot; commType &quot;.&quot;
+msgType 
+</P>
+<P><BR><BR>
+</P>
+<P><B>variable</B> = message &quot;.&quot; member 
+</P>
+<P><BR><BR>
+</P>
+<P><B>commType</B> = Signal | State | Data 
+</P>
+<P><BR><BR>
+</P>
+<P><B>host</B> = string 
+</P>
+<P><BR><BR>
+</P>
+<P><B>topic</B> = string 
+</P>
+<P><BR><BR>
+</P>
+<P><B>msgType</B> = string 
+</P>
+<P><BR><BR>
+</P>
+<P><B>member</B> = string “(”“ number* “)” ( “.”string
+“(” number* “)” )</P>
+<P><BR><BR>
+</P>
+<P><B>membersetfunction</B> = string ( “(” number* “)” “.”
+string)* 
+</P>
+<P><BR><BR>
+</P>
+<P><B>time</B> = number +</P>
+<P><BR><BR>
+</P>
+<P><B>stringLiteral</B> = &quot; string &quot; 
+</P>
+<P><BR><BR>
+</P>
+<P><B>string</B> = letter (letter | number | “_” )*</P>
+<P><BR><BR>
+</P>
+<P><B>letter</B> = &quot;a&quot; | “A” | &quot;b&quot; | “ B”
+| &quot;c&quot; | “C” | &quot;d&quot; | &quot;D&quot; | ... 
+</P>
+<P><BR><BR>
+</P>
+<P><B>number</B> = “0” | “1” | “2” | “3” …</P>
+<P><BR><BR>
+</P>
+<P>In case you are using the provided generator and you would like
+the transition 
+</P>
+<P>expression to be true when a message(blackboard' s message) is
+null you would 
+</P>
+<P>have to write topic &quot;.&quot; commType &quot;.&quot; msgType
+== NULL in condition expression.</P>
+<P><BR><BR>
+</P>
+<P>Please in case of a TimeoutAction use always TimeoutCheck first in
+the condition expression.</P>
+<P><BR><BR>
+</P>
+<P><FONT SIZE=4><B>GO TO <A HREF="../toc.html">Table Of Contents</A></B></FONT></P>
+</BODY>
+</HTML>

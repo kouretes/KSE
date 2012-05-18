@@ -1,0 +1,43 @@
+import IAC;
+
+String NodeNameInst( String str ) :
+   JAVA JavaHelpers.NodeHelper.NodeNameInst(java.lang.String);
+   
+String ParentNodeNameInst( String str ) :
+   JAVA JavaHelpers.NodeHelper.ParentNodeNameInst(java.lang.String);
+   
+String ActivityNameInst( String str ) :
+   JAVA JavaHelpers.NodeHelper.ActivityNameInst(java.lang.String);
+   
+String TransitionName( String str ) :
+   JAVA JavaHelpers.NodeHelper.TransitionName(java.lang.String);
+   
+String ActionName( String str ) :
+   JAVA JavaHelpers.NodeHelper.ActionName(java.lang.String);
+   
+String ActionNameInst( String str ) :
+   JAVA JavaHelpers.NodeHelper.ActionNameInst(java.lang.String);
+   
+String ConditionName( String str ) :
+   JAVA JavaHelpers.NodeHelper.ConditionName(java.lang.String);
+   
+String ConditionNameInst( String str ) :
+   JAVA JavaHelpers.NodeHelper.ConditionNameInst(java.lang.String);
+   
+String EventName( String str ) :
+   JAVA JavaHelpers.NodeHelper.EventName(java.lang.String);
+   
+String EventNameInst( String str ) :
+   JAVA JavaHelpers.NodeHelper.EventNameInst(java.lang.String);
+   
+String NameFilter( String str ) :
+   JAVA JavaHelpers.NodeHelper.NameFilter(java.lang.String);
+   
+String ClassName( String str ) :
+   JAVA JavaHelpers.NodeHelper.ClassName(java.lang.String);
+   
+Collection[Node] SortNodes( Collection c) :
+   JAVA JavaHelpers.NodeHelper.SortNodes(java.util.Collection);
+   
+List[Variable] ActivityVariables(Node node):
+	JAVA JavaHelpers.NodeHelper.ActivityVariables(IAC.Node);

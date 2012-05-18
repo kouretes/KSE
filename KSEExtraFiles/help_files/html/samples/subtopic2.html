@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Transition Samples</TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.3  (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="angelica ">
+	<META NAME="CHANGED" CONTENT="20120219;13310900">
+	<META NAME="CHANGEDBY" CONTENT="angelica ">
+	<META NAME="CHANGEDBY" CONTENT="angelica ">
+	<META NAME="CHANGEDBY" CONTENT="angelica ">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H1>Transition's Samples</H1>
+<UL>
+	<LI><P>For transition expression
+	<FONT COLOR="#0000ff">“</FONT><FONT COLOR="#0000ff"><SPAN STYLE="font-weight: normal">[behavior.State.GameStateMessage==NULL
+	||behavior.State.GameStateMessage.player_state()!=PLAYER_PLAYING]</SPAN></FONT>”
+	the class that is generated is:<BR><BR><FONT COLOR="#00ffff">#include</FONT>
+	<FONT COLOR="#ffb515">&quot;architecture/statechartEngine/ICondition.h&quot;</FONT><BR><FONT COLOR="#00ffff">#include</FONT>
+	<FONT COLOR="#ffb515">&quot;messages/AllMessagesHeader.h&quot;</FONT><FONT COLOR="#ffff00">
+	</FONT><BR><FONT COLOR="#00ffff">#include</FONT>
+	<FONT COLOR="#ffb515">&quot;tools/BehaviorConst.h&quot;</FONT><FONT COLOR="#ffff00">
+	</FONT><BR><BR><BR><FONT COLOR="#ff0000">//
+	0.3.2.2TOnonPlaying</FONT><BR>class TrCond_Goalie0_3_2_20_3_2_4 :
+	public statechart_engine::ICondition {<BR><BR>public:<BR><FONT COLOR="#000080">void</FONT>
+	UserInit ()
+	{<BR>_blk-&gt;updateSubscription(<FONT COLOR="#ffb515">&quot;behavior&quot;</FONT>,msgentry::SUBSCRIBE_ON_TOPIC);<BR>}<BR>bool
+	Eval() {<BR><FONT COLOR="#ff0000">/*
+	behavior.State.GameStateMessage==NULL
+	||behavior.State.GameStateMessage.player_state()!=PLAYER_PLAYING
+	*/</FONT><BR><BR>boost::shared_ptr&lt;<FONT COLOR="#000080">const</FONT>
+	GameStateMessage&gt; var_ 621149599 =
+	_blk-&gt;readState&lt;GameStateMessage&gt; (<FONT COLOR="#ffb515">&quot;behavior&quot;
+	</FONT>);<BR><BR><FONT COLOR="#000080">if</FONT> (
+	var_621149599.get() == 0 ) { <BR><FONT COLOR="#000080">return</FONT>
+	true;<BR>}<BR><BR>	<FONT COLOR="#000080">return</FONT> (
+	var_621149599-&gt;player_state()!=PLAYER_PLAYING );<BR><BR>};</P>
+</UL>
+<P><BR><BR>
+</P>
+<UL>
+	<LI><P>For transition expression <FONT COLOR="#0000ff">“[TimeoutCheck(behavior)
+	&amp;&amp; ( behavior.State.GameStateMessage==NULL ||
+	behavior.State.GameStateMessage.player_state()!=PLAYER_FINISHED)]/TimeoutAction.behavior.300</FONT><FONT COLOR="#0000ff"><SPAN STYLE="font-weight: normal">]</SPAN></FONT><FONT COLOR="#0000ff">”</FONT>
+	the class that is generated is:</P>
+	<P><FONT COLOR="#00ffff">#include</FONT><FONT COLOR="#e6e64c">
+	</FONT><FONT COLOR="#ff950e">&quot;architecture/statechartEngine/ICondition.h&quot;</FONT></P>
+	<P><FONT COLOR="#00ffff">#include</FONT>
+	<FONT COLOR="#ff950e">&quot;messages/AllMessagesHeader.h&quot;</FONT>	</P>
+	<P><FONT COLOR="#00ffff">#include</FONT> <FONT COLOR="#ff950e">&quot;tools/BehaviorConst.h&quot;</FONT>	</P>
+	<P><FONT COLOR="#ff0000">//
+	_open_group_playing_or_nonPlaying_close_group_TO_open_group_playing_or_nonPlaying_close_group_</FONT></P>
+	<P>class TrCond_Goalie0_3_20_3_2 : public
+	statechart_engine::ICondition {	</P>
+	<P>public:</P>
+	<P>	void UserInit () {		</P>
+	<P>_blk-&gt;updateSubscription(&quot;<FONT COLOR="#ffff00">behavior</FONT>&quot;,msgentry::SUBSCRIBE_ON_TOPIC);	</P>
+	<P>}	</P>
+	<P></P>
+	<P>bool Eval() {		</P>
+	<P><FONT COLOR="#ff0000">/* TimeoutCheck(behavior) &amp;&amp; (
+	behavior.State.GameStateMessage==NULL ||
+	behavior.State.GameStateMessage.player_state()!=PLAYER_FINISHED) */</FONT></P>
+	<P>	boost::shared_ptr&lt;const GameStateMessage&gt; var_621149599 =
+	_blk-&gt;readState&lt;GameStateMessage&gt; (<FONT COLOR="#ffff00">&quot;behavior&quot;</FONT>
+	);</P>
+	<P>boost::shared_ptr&lt;const TimeoutMsg &gt; msg = _blk-&gt;readState&lt;
+	TimeoutMsg &gt; (<FONT COLOR="#ffff00">&quot;behavior&quot;</FONT>);	</P>
+	<P>_blk-&gt;process_messages();		</P>
+	<P>if( msg.get() == <FONT COLOR="#00ff00">0</FONT>){			</P>
+	<P>return true;		</P>
+	<P>} 		</P>
+	<P>if(msg-&gt;wakeup()==<FONT COLOR="#ffff00">&quot;&quot;</FONT>)	</P>
+	<P>return true;		</P>
+	<P>if ( var_621149599.get() == <FONT COLOR="#00ff00">0 </FONT>)	</P>
+	<P> return true;		</P>
+	<P>return(
+	boost::posix_time::from_iso_string(msg-&gt;wakeup())&lt;boost::posix_time::microsec_clock::local_time()
+	&amp;&amp; (  var_621149599-&gt;player_state()!=PLAYER_FINISHED) ); 
+	 
+	</P>
+	<P>}</P>
+	<P>};</P>
+	<P></P>
+	<P><FONT COLOR="#00ffff">#include
+	</FONT><FONT COLOR="#ffb515">&quot;architecture/statechartEngine/IAction.h&quot;</FONT></P>
+	<P><FONT COLOR="#00ffff">#include
+	</FONT><FONT COLOR="#ffb515">&quot;architecture/statechartEngine/TimoutAciton.h&quot;</FONT></P>
+	<P><FONT COLOR="#ff0000">//
+	_open_group_playing_or_nonPlaying_close_group_TO_open_group_playing_or_nonPlaying_close_group_</FONT></P>
+	<P>class TrAction_Goalie0_3_20_3_2 : public statechart_engine::
+	TimeoutAction {		</P>
+	<P><FONT COLOR="#ff0000">/* TimeoutAction.behavior.300 */</FONT>	</P>
+	<P>public:	TrAction_Goalie0_3_20_3_2() :
+	statechart_engine::TimeoutAction( <FONT COLOR="#ffff00">&quot;behavior&quot;</FONT>,
+	<FONT COLOR="#00ff00">300</FONT> ) {</P>
+	<P> ;	</P>
+	<P> }</P>
+	<P>};</P>
+	<P></P>
+</UL>
+<P><FONT SIZE=4><B>See also <A HREF="subtopic.html">Formula's Samples</A></B></FONT></P>
+<P><FONT SIZE=4><B>GO TO <A HREF="../toc.html">Table Of Contents</A></B></FONT></P>
+</BODY>
+</HTML>

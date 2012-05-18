@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="statechart.presentation.StatechartModelWizardID"
+            name="%_UI_StatechartModelWizard_label"
+            class="statechart.presentation.StatechartModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StatechartModelFile.gif">
+         <description>%_UI_StatechartModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="statechart.presentation.StatechartEditorID"
+            name="%_UI_StatechartEditor_label"
+            icon="icons/full/obj16/StatechartModelFile.gif"
+            extensions="statechart"
+            class="statechart.presentation.StatechartEditor"
+            contributorClass="statechart.presentation.StatechartActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

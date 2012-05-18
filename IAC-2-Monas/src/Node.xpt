@@ -1,0 +1,36 @@
+«IMPORT IAC»
+«EXTENSION JavaHelpers::NodeHelper»
+
+«DEFINE Node FOR Node»
+			«IF label.compareTo("0")==0 -»
+	_statechart = new Statechart ( "«NodeNameInst(name)»", com );
+	Statechart* «NodeNameInst(label)» = _statechart;
+	_states.push_back( «NodeNameInst(label)» );
+			«ELSEIF type.compareTo("START")==0 -»
+	StartState* «NodeNameInst(label)» = new StartState ( "«NodeNameInst(name)»", «ParentNodeNameInst(label)» ); //Name:«name»
+	_states.push_back( «NodeNameInst(label)» );
+			«ELSEIF type.compareTo("END")==0 -»
+	EndState* «NodeNameInst(label)» = new EndState ( "«NodeNameInst(name)»", «ParentNodeNameInst(label)» ); //Name:«name»
+	_states.push_back( «NodeNameInst(label)» );
+			«ELSEIF type.compareTo("OR")==0 -»
+	OrState* «NodeNameInst(label)» = new OrState ( "«NodeNameInst(name)»", «ParentNodeNameInst(label)» );	//Name:«NameFilter(name)»
+	_states.push_back( «NodeNameInst(label)» );
+			«ELSEIF type.compareTo("AND")==0 -»
+	AndState* «NodeNameInst(label)» = new AndState ( "«NodeNameInst(name)»", «ParentNodeNameInst(label)» ); //Name:«name»
+	_states.push_back( «NodeNameInst(label)» );
+			«ELSEIF type.compareTo("CONDITION")==0 -»
+	ConditionConnector* «NodeNameInst(label)»  = new ConditionConnector ( "«NodeNameInst(name)»", «ParentNodeNameInst(label)» ); //Name:«name»
+	_states.push_back( «NodeNameInst(label)» );
+			«ELSEIF type.compareTo("BASIC")==0 -»
+				«IF activity== null -»
+					«EXPAND Activity::Activity»
+				«ENDIF-»
+	IActivity* «ActivityNameInst(label)» = ActivityFactory::Instance()->CreateObject( "«ClassName(name)»" );
+	_activities.push_back( «ActivityNameInst(label)» );			
+	BasicState* «NodeNameInst(label)» = new BasicState( "«NodeNameInst(name)»", «ParentNodeNameInst(label)», «ActivityNameInst(label)» ); //Name:«name»
+	_states.push_back( «NodeNameInst(label)» );
+			«ELSE-»
+	NODE:«label»: Error on node type! 
+	Available types are "START", "END", "OR", "AND", "CONDITION" and "BASIC"				  
+			«ENDIF-»
+«ENDDEFINE»

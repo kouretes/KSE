@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<IAC:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:IAC="http://www.amcl.tuc.gr/aseme/metamodels/IAC" name="StateChartExample">
+  <nodes name="behavior" type="OR" label="0"/>
+  <nodes name="0.1" type="START" label="0.1" Father_of="//@nodes.0"/>
+  <nodes name="_open_group_play_or_NoPlay_close_group_" type="OR" label="0.2" Father_of="//@nodes.0"/>
+  <nodes name="0.2.1" type="START" label="0.2.1" Father_of="//@nodes.2"/>
+  <nodes name="0.2.2" type="CONDITION" label="0.2.2" Father_of="//@nodes.2"/>
+  <nodes name="play" type="OR" label="0.2.3" Father_of="//@nodes.2"/>
+  <nodes name="0.2.3.1" type="START" label="0.2.3.1" Father_of="//@nodes.5"/>
+  <nodes name="0.2.3.2" type="CONDITION" label="0.2.3.2" Father_of="//@nodes.5"/>
+  <nodes name="SitDown" type="BASIC" label="0.2.3.3" activity="GENERATE" Father_of="//@nodes.5"/>
+  <nodes name="Scan" type="BASIC" label="0.2.3.4" activity="/home/angelica/Desktop/Monas/src/activitiesScan" Father_of="//@nodes.5"/>
+  <nodes name="0.2.3.5" type="END" label="0.2.3.5" Father_of="//@nodes.5"/>
+  <nodes name="NoPlay" type="BASIC" label="0.2.4" activity="/home/angelica/Desktop/Monas/src/activitiesNoPlay" Father_of="//@nodes.2"/>
+  <nodes name="0.2.5" type="END" label="0.2.5" Father_of="//@nodes.2"/>
+  <nodes name="0.3" type="END" label="0.3" Father_of="//@nodes.0"/>
+  <transitions source="//@nodes.3" target="//@nodes.4" name="0.2.1TO0.2.2"/>
+  <transitions TE="[behavior.State.GameStateMessage.player_state()==PLAYER_PLAYING]" source="//@nodes.4" target="//@nodes.5" name="0.2.2TOplay"/>
+  <transitions TE="[_behavior.State.GameStateMessage.player_state()!=PLAYER_PLAYING]" source="//@nodes.4" target="//@nodes.11" name="0.2.2TONoPlay"/>
+  <transitions source="//@nodes.11" target="//@nodes.12" name="NoPlayTO0.2.5"/>
+  <transitions source="//@nodes.5" target="//@nodes.12" name="playTO0.2.5"/>
+  <transitions source="//@nodes.6" target="//@nodes.7" name="0.2.3.1TO0.2.3.2"/>
+  <transitions TE="[behavior.State.HeadToBMessage.ballfound()>0]" source="//@nodes.7" target="//@nodes.8" name="0.2.3.2TOSitDown"/>
+  <transitions TE="[_behavior.State.HeadToBMessage.ballfound()==0]" source="//@nodes.7" target="//@nodes.9" name="0.2.3.2TOScan"/>
+  <transitions source="//@nodes.9" target="//@nodes.10" name="ScanTO0.2.3.5"/>
+  <transitions source="//@nodes.8" target="//@nodes.10" name="SitDownTO0.2.3.5"/>
+  <transitions source="//@nodes.1" target="//@nodes.2" name="0.1TO_open_group_play_or_NoPlay_close_group_"/>
+  <transitions TE="[boost::posix_time::from_iso_string(_behavior.State.TimeoutMsg.wakeup()) &lt; boost::posix_time::microsec_clock::local_time() &amp;&amp; behavior.State.GameStateMessage.player_state()!=PLAYER_FINISHED]/TimeoutAction.behavior.200" source="//@nodes.2" target="//@nodes.2" name="_open_group_play_or_NoPlay_close_group_TO_open_group_play_or_NoPlay_close_group_"/>
+  <transitions TE="[behavior.State.GameStateMessage.player_state()==PLAYER_FINISHED]" source="//@nodes.2" target="//@nodes.13" name="_open_group_play_or_NoPlay_close_group_TO0.3"/>
+</IAC:Model>

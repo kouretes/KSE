@@ -1,0 +1,10 @@
+import IAC;
+  
+String InitVariables( List var ) :
+   JAVA JavaHelpers.Variables.InitVariables(java.util.List);
+   
+String ReadVariables( List var ) :
+	JAVA JavaHelpers.Variables.ReadVariables(java.util.List);
+	
+String DeclareVariables( List var ) :
+	JAVA JavaHelpers.Variables.DeclareVariables(java.util.List);

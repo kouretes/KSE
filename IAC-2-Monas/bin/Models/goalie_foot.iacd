@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:IAC="http://www.amcl.tuc.gr/aseme/metamodels/IAC" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_6W9DsJ2mEeCUEdp48VLqHg" type="IAC" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_6W9DsZ2mEeCUEdp48VLqHg"/>
+  <element xmi:type="IAC:Model" href="goalie_foot.iac#/"/>
+</notation:Diagram>

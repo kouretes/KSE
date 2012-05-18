@@ -1,0 +1,25 @@
+«IMPORT IAC»
+«EXTENSION JavaHelpers::NodeHelper»
+«EXTENSION JavaHelpers::TransExpr»
+
+«DEFINE TransitionHeadersLogger(String modelname) FOR IAC::Transition»
+	«IF HasEvent(TE) || HasCondition(TE) || HasAction(TE)»
+		«FILE "transitionHeaders.h"»
+#include "transitions/«TransitionName(modelname+source.label+target.label)+".h"»"
+		«ENDFILE»
+	«ENDIF»
+«ENDDEFINE»
+
+
+«DEFINE TransitionLogger(String modelname) FOR IAC::Transition»
+	«IF TE.compareTo("null")!=0-»		
+		«EXPAND ConditionLogger::ConditionLogger(modelname)»
+		«EXPAND Action::Action(modelname)»
+	«ENDIF-»
+	_transitions.push_back( new TransitionSegment<«
+			IF source.type.compareTo("CONDITION")==0 -»ConditionConnector«ELSE-»State«ENDIF-»,«
+			IF target.type.compareTo("CONDITION")==0 -»ConditionConnector«ELSE-»State«ENDIF
+		-»>(«NodeNameInst(source.label)»,«NodeNameInst(target.label)-»
+ «IF HasCondition(TE)-»,«ConditionNameInst(modelname+source.label+target.label)-»«ENDIF-»
+ «IF HasAction(TE)-»,«ActionNameInst(modelname+source.label+target.label)-»«ENDIF-» ) ); //«modelname+source.label+target.label-» 
+«ENDDEFINE»

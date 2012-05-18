@@ -1,0 +1,39 @@
+«IMPORT IAC»
+«EXTENSION JavaHelpers::NodeHelper»
+«EXTENSION JavaHelpers::TransExpr»
+
+«DEFINE Action(String modelname) FOR IAC::Transition»
+	«IF HasAction(TE)-»
+		«FILE TransitionName(modelname+source.label+target.label)+".h" transitions_outlet»
+#include "architecture/statechartEngine/IAction.h"
+			«IF TE.contains("TimeoutAction")-» 
+#include "architecture/statechartEngine/TimoutAciton.h"
+			«ENDIF-»
+			«IF !HasCondition(TE)-» 
+#include "messages/AllMessagesHeader.h"
+			«ENDIF-»
+// «name»
+class «ActionName(modelname+source.label+target.label)» : public statechart_engine::
+			«IF TE.contains("TimeoutAction")-» 
+				TimeoutAction {
+		/* «getActionOfExpression(TE)» */
+	public:	«ActionName(modelname+source.label+target.label)»() «CreateVarTimeoutActionExpr(TE)»
+			«ELSE -»
+				IAction {
+		/* «getActionOfExpression(TE)» */
+	public:
+	void UserInit () { }
+
+	int Execute() {
+«CreateVarActionExpr(TE)»
+«ExecuteActionExpr(TE)»
+		return 0;
+    }
+			«ENDIF-»
+};
+
+		«ENDFILE»
+	IAction* «ActionNameInst(modelname+source.label+target.label)» = new «ActionName(modelname+source.label+target.label)»;
+	_actions.push_back( «ActionNameInst(modelname+source.label+target.label)» );
+	«ENDIF-»
+«ENDDEFINE»

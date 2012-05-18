@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project IAC-2-Monas">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/media/ECF41E8CF41E5962/Dropbox/thesis/KSEExtraFiles/plugins/generator.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="iac2monas.MainWindowApplication"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="/home/angelica/workspace/IAC-2-Monas/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.jdt.compiler.apt_1.0.400.v0110816-0800.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.jdt.compiler.tool_1.0.100.v_B76_R37x.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.xtend.profiler_1.0.1.v201108020519.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.apache.log4j_1.2.15.v201012070815.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/com.ibm.icu_4.4.2.v20110208.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.antlr.runtime_3.2.0.v201101311130.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.core.runtime_3.7.0.v20110110.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.osgi_3.7.1.R37x_v20110808-1106.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.equinox.common_3.6.0.v20110523.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.core.jobs_3.5.100.v20110404.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.0.v20110505/runtime_registry_compatibility.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.equinox.preferences_3.4.1.R37x_v20110725.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.equinox.app_1.3.100.v20110321.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.emf.mwe.utils_1.1.1.v201108020506.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20110520-1406.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20110912-0920.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20110912-0920.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.jface.text_3.7.1.r371_v20110825-0800.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.text_3.5.101.r371_v20110810-0800.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.xpand_1.1.0.v201108020519.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.xtend_1.1.0.v201108020519.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.emf.mwe.core_1.1.1.v201108020506.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.apache.commons.cli_1.2.0.v201105210650.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.emf.mwe2.runtime_2.0.1.v201108020506.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.xtend.typesystem.emf_1.0.1.v201108020519.jar"/>
+            <fileset dir="/home/angelica/workspace/IACdesign/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/StateChartPlugIn_1.0.0.201203091420.jar"/>
+        </jar>
+    </target>
+</project>

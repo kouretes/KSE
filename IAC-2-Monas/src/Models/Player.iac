@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IAC:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:IAC="http://www.amcl.tuc.gr/aseme/metamodels/IAC" name="kouretes.simple_player">
+  <nodes name="Player" type="OR" label="0"/>
+  <nodes name="0.1" type="START" label="0.1" Father_of="//@nodes.0"/>
+  <nodes name="PlayerSetup" type="BASIC" label="0.2" Father_of="//@nodes.0"/>
+  <nodes name="PlayGame" type="OR" label="0.3" Father_of="//@nodes.0"/>
+  <nodes name="0.4" type="END" label="0.4" Father_of="//@nodes.0"/>
+  <nodes name="0.3.1" type="START" label="0.3.1" Father_of="//@nodes.3"/>
+  <nodes name="_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group__one_or_more_times_" type="OR" label="0.3.2" Father_of="//@nodes.3"/>
+  <nodes name="EndPhaseActions" type="BASIC" label="0.3.3" Father_of="//@nodes.3"/>
+  <nodes name="0.3.4" type="END" label="0.3.4" Father_of="//@nodes.3"/>
+  <nodes name="0.3.2.1" type="START" label="0.3.2.1" Father_of="//@nodes.6"/>
+  <nodes name="_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group_" type="OR" label="0.3.2.2" Father_of="//@nodes.6"/>
+  <nodes name="0.3.2.2.1" type="START" label="0.3.2.2.1" Father_of="//@nodes.10"/>
+  <nodes name="0.3.2.2.2" type="CONDITION" label="0.3.2.2.2" Father_of="//@nodes.10"/>
+  <nodes name="_open_option_InitialPhaseActions_close_option_" type="OR" label="0.3.2.2.3" Father_of="//@nodes.10"/>
+  <nodes name="ReadyPhaseActions" type="BASIC" label="0.3.2.2.4" Father_of="//@nodes.10"/>
+  <nodes name="SetPhaseActions" type="OR" label="0.3.2.2.5" Father_of="//@nodes.10"/>
+  <nodes name="PlayPhaseActions" type="OR" label="0.3.2.2.6" Father_of="//@nodes.10"/>
+  <nodes name="PenalizedPhaseActions" type="BASIC" label="0.3.2.2.7" Father_of="//@nodes.10"/>
+  <nodes name="0.3.2.2.8" type="END" label="0.3.2.2.8" Father_of="//@nodes.10"/>
+  <nodes name="0.3.2.2.3.1" type="START" label="0.3.2.2.3.1" Father_of="//@nodes.13"/>
+  <nodes name="0.3.2.2.3.2" type="CONDITION" label="0.3.2.2.3.2" Father_of="//@nodes.13"/>
+  <nodes name="InitialPhaseActions" type="BASIC" label="0.3.2.2.3.3" Father_of="//@nodes.13"/>
+  <nodes name="0.3.2.2.3.4" type="END" label="0.3.2.2.3.4" Father_of="//@nodes.13"/>
+  <nodes name="0.3.2.2.5.1" type="START" label="0.3.2.2.5.1" Father_of="//@nodes.15"/>
+  <nodes name="SmartScan_one_or_more_times_" type="OR" label="0.3.2.2.5.2" Father_of="//@nodes.15"/>
+  <nodes name="_open_option_ScanForBall_one_or_more_times__close_option_" type="OR" label="0.3.2.2.5.3" Father_of="//@nodes.15"/>
+  <nodes name="Trackball_one_or_more_times_" type="OR" label="0.3.2.2.5.4" Father_of="//@nodes.15"/>
+  <nodes name="0.3.2.2.5.5" type="END" label="0.3.2.2.5.5" Father_of="//@nodes.15"/>
+  <nodes name="0.3.2.2.5.2.1" type="START" label="0.3.2.2.5.2.1" Father_of="//@nodes.24"/>
+  <nodes name="SmartScan" type="BASIC" label="0.3.2.2.5.2.2" Father_of="//@nodes.24"/>
+  <nodes name="0.3.2.2.5.2.3" type="END" label="0.3.2.2.5.2.3" Father_of="//@nodes.24"/>
+  <nodes name="0.3.2.2.5.3.1" type="START" label="0.3.2.2.5.3.1" Father_of="//@nodes.25"/>
+  <nodes name="0.3.2.2.5.3.2" type="CONDITION" label="0.3.2.2.5.3.2" Father_of="//@nodes.25"/>
+  <nodes name="ScanForBall_one_or_more_times_" type="OR" label="0.3.2.2.5.3.3" Father_of="//@nodes.25"/>
+  <nodes name="0.3.2.2.5.3.3.1" type="START" label="0.3.2.2.5.3.3.1" Father_of="//@nodes.33"/>
+  <nodes name="ScanForBall" type="BASIC" label="0.3.2.2.5.3.3.2" Father_of="//@nodes.33"/>
+  <nodes name="0.3.2.2.5.3.3.3" type="END" label="0.3.2.2.5.3.3.3" Father_of="//@nodes.33"/>
+  <nodes name="0.3.2.2.5.3.4" type="END" label="0.3.2.2.5.3.4" Father_of="//@nodes.25"/>
+  <nodes name="0.3.2.2.5.4.1" type="START" label="0.3.2.2.5.4.1" Father_of="//@nodes.26"/>
+  <nodes name="Trackball" type="BASIC" label="0.3.2.2.5.4.2" Father_of="//@nodes.26"/>
+  <nodes name="0.3.2.2.5.4.3" type="END" label="0.3.2.2.5.4.3" Father_of="//@nodes.26"/>
+  <nodes name="0.3.2.3" type="END" label="0.3.2.3" Father_of="//@nodes.6"/>
+  <transitions source="//@nodes.1" target="//@nodes.2" name="0.1TOPlayerSetup"/>
+  <transitions source="//@nodes.2" target="//@nodes.3" name="PlayerSetupTOPlayGame"/>
+  <transitions source="//@nodes.3" target="//@nodes.4" name="PlayGameTO0.4"/>
+  <transitions source="//@nodes.5" target="//@nodes.6" name="0.3.1TO_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group__one_or_more_times_"/>
+  <transitions source="//@nodes.6" target="//@nodes.7" name="_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group__one_or_more_times_TOEndPhaseActions"/>
+  <transitions source="//@nodes.7" target="//@nodes.8" name="EndPhaseActionsTO0.3.4"/>
+  <transitions source="//@nodes.11" target="//@nodes.12" name="0.3.2.2.1TO0.3.2.2.2"/>
+  <transitions TE="[behavior.State.GameStateMessage.player_state()==PLAYER_INITIAL]" source="//@nodes.12" target="//@nodes.13" name="0.3.2.2.2TO_open_option_InitialPhaseActions_close_option_"/>
+  <transitions TE="[behavior.State.GameStateMessage.player_state()==PLAYER_READY]" source="//@nodes.12" target="//@nodes.14" name="0.3.2.2.2TOReadyPhaseActions"/>
+  <transitions TE="[behavior.State.GameStateMessage.player_state()==PLAYER_SET]/motion.Signal.MotionActionMessage.set_command(&quot;Init.xar&quot;);publish.motion.Signal.MotionActionMessage" source="//@nodes.12" target="//@nodes.15" name="0.3.2.2.2TOSetPhaseActions"/>
+  <transitions TE="" source="//@nodes.12" target="//@nodes.16" name="0.3.2.2.2TOPlayPhaseActions"/>
+  <transitions TE="[behavior.State.GameStateMessage.player_state()==PLAYER_PENALISED]" source="//@nodes.12" target="//@nodes.17" name="0.3.2.2.2TOPenalizedPhaseActions"/>
+  <transitions source="//@nodes.17" target="//@nodes.18" name="PenalizedPhaseActionsTO0.3.2.2.8"/>
+  <transitions source="//@nodes.16" target="//@nodes.18" name="PlayPhaseActionsTO0.3.2.2.8"/>
+  <transitions source="//@nodes.15" target="//@nodes.18" name="SetPhaseActionsTO0.3.2.2.8"/>
+  <transitions source="//@nodes.14" target="//@nodes.18" name="ReadyPhaseActionsTO0.3.2.2.8"/>
+  <transitions source="//@nodes.13" target="//@nodes.18" name="_open_option_InitialPhaseActions_close_option_TO0.3.2.2.8"/>
+  <transitions source="//@nodes.19" target="//@nodes.20" name="0.3.2.2.3.1TO0.3.2.2.3.2"/>
+  <transitions source="//@nodes.20" target="//@nodes.21" name="0.3.2.2.3.2TOInitialPhaseActions"/>
+  <transitions source="//@nodes.20" target="//@nodes.22" name="0.3.2.2.3.2TO0.3.2.2.3.4"/>
+  <transitions source="//@nodes.21" target="//@nodes.22" name="InitialPhaseActionsTO0.3.2.2.3.4"/>
+  <transitions source="//@nodes.23" target="//@nodes.24" name="0.3.2.2.5.1TOSmartScan_one_or_more_times_"/>
+  <transitions source="//@nodes.24" target="//@nodes.25" name="SmartScan_one_or_more_times_TO_open_option_ScanForBall_one_or_more_times__close_option_"/>
+  <transitions source="//@nodes.25" target="//@nodes.26" name="_open_option_ScanForBall_one_or_more_times__close_option_TOTrackball_one_or_more_times_"/>
+  <transitions source="//@nodes.26" target="//@nodes.27" name="Trackball_one_or_more_times_TO0.3.2.2.5.5"/>
+  <transitions TE="/smart_scan_timeout.State.TimeoutMsg.set_wakeup(boost::posix_time::to_iso_string(boost::posix_time::microsec_clock::local_time()+boost::posix_time::millisec(3000)));publish.smart_scan_timeout.State.TimeoutMsg" source="//@nodes.28" target="//@nodes.29" name="0.3.2.2.5.2.1TOSmartScan"/>
+  <transitions TE="[(boost::posix_time::microsec_clock::local_time() - boost::posix_time::from_iso_string(smart_scan_timeout.State.TimeoutMsg.wakeup()) ).total_microseconds()>0&amp;&amp;behavior.State.GameStateMessage.player_state()==PLAYER_SET]" source="//@nodes.29" target="//@nodes.29" name="SmartScanTOSmartScan"/>
+  <transitions source="//@nodes.29" target="//@nodes.30" name="SmartScanTO0.3.2.2.5.2.3"/>
+  <transitions source="//@nodes.34" target="//@nodes.35" name="0.3.2.2.5.3.3.1TOScanForBall"/>
+  <transitions source="//@nodes.35" target="//@nodes.35" name="ScanForBallTOScanForBall"/>
+  <transitions source="//@nodes.35" target="//@nodes.36" name="ScanForBallTO0.3.2.2.5.3.3.3"/>
+  <transitions source="//@nodes.31" target="//@nodes.32" name="0.3.2.2.5.3.1TO0.3.2.2.5.3.2"/>
+  <transitions source="//@nodes.32" target="//@nodes.33" name="0.3.2.2.5.3.2TOScanForBall_one_or_more_times_"/>
+  <transitions source="//@nodes.32" target="//@nodes.37" name="0.3.2.2.5.3.2TO0.3.2.2.5.3.4"/>
+  <transitions source="//@nodes.33" target="//@nodes.37" name="ScanForBall_one_or_more_times_TO0.3.2.2.5.3.4"/>
+  <transitions source="//@nodes.38" target="//@nodes.39" name="0.3.2.2.5.4.1TOTrackball"/>
+  <transitions source="//@nodes.39" target="//@nodes.39" name="TrackballTOTrackball"/>
+  <transitions source="//@nodes.39" target="//@nodes.40" name="TrackballTO0.3.2.2.5.4.3"/>
+  <transitions source="//@nodes.9" target="//@nodes.10" name="0.3.2.1TO_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group_"/>
+  <transitions source="//@nodes.10" target="//@nodes.10" name="_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group_TO_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group_"/>
+  <transitions TE="[behavior.State.GameStateMessage.player_state()==PLAYER_FINISHED]" source="//@nodes.10" target="//@nodes.41" name="_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group_TO0.3.2.3"/>
+</IAC:Model>

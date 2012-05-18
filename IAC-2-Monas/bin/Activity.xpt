@@ -1,0 +1,73 @@
+«IMPORT IAC»
+«EXTENSION JavaHelpers::NodeHelper»
+«EXTENSION JavaHelpers::Variables»
+«DEFINE Activity FOR IAC::Node»
+	«FILE ClassName(name)+"/"+ClassName(name)+".h" activities_outlet»
+#ifndef _«ClassName(name)»_h_
+#define _«ClassName(name)»_h_ 1
+
+#include "architecture/IActivity.h"
+		«IF !variables.isEmpty -»
+#include "messages/AllMessagesHeader.h"
+		«ENDIF-»
+			
+class «ClassName(name)» : public IActivity {
+			
+public:
+	
+	int Execute ();
+	
+	void UserInit ();
+	
+	std::string GetName ();
+		«IF !variables.isEmpty -»
+private:
+	void read_messages();
+«DeclareVariables(variables)»
+		«ENDIF-»
+	
+};
+
+#endif // _«ClassName(name)»_h_
+	«ENDFILE»
+	«FILE ClassName(name)+"/"+ClassName(name)+".cpp" activities_outlet»
+#include "«ClassName(name)+".h"»"
+namespace {
+    ActivityRegistrar<«ClassName(name)»>::Type temp("«ClassName(name)»");
+}
+int «ClassName(name)»::Execute() {
+		«IF !variables.isEmpty -»
+	read_messages();
+		«ENDIF-»		
+	return 0;
+}
+void «ClassName(name)»::UserInit () {	
+		«IF !variables.isEmpty -»
+«InitVariables(variables)»
+		«ENDIF-»
+}
+std::string «ClassName(name)»::GetName () {
+	return "«ClassName(name)»";
+}
+		«IF !variables.isEmpty -»
+void «ClassName(name)»::read_messages(){
+«ReadVariables(variables)»
+}
+		«ENDIF-»
+	«ENDFILE»
+	«FILE ClassName(name)+"/"+"CMakeLists.txt" activities_outlet»
+#if ( NOT ( ${TargetPlatform} STREQUAL "robot" AND ${RobotPlatform} STREQUAL "nao" ) )
+#    return()
+#endif ( NOT ( ${TargetPlatform} STREQUAL "robot" AND ${RobotPlatform} STREQUAL "nao" ) )
+
+#include( ../../hal/robot/nao-1.6.0/bootstrap.cmake )
+
+set ( ActivityName «ClassName(name)» )
+
+set ( ActivitySrcs  «ClassName(name)+".cpp"» )
+
+include ( ../activTemplate.cmake )
+
+#use_lib(${ActivityName} ALCOMMON ALVALUE ALMATH LIBCORE TOOLS)	
+	«ENDFILE»
+«ENDDEFINE»

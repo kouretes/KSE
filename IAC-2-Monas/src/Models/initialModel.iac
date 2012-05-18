@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="ASCII"?>
+<IAC:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:IAC="http://www.amcl.tuc.gr/aseme/metamodels/IAC" name="default_name">
+  <nodes name="Player" type="OR" label="0"/>
+  <nodes name="0.1" type="START" label="0.1" Father_of="//@nodes.0"/>
+  <nodes name="PlayerSetup" type="BASIC" label="0.2" Father_of="//@nodes.0"/>
+  <nodes name="PlayGame" type="OR" label="0.3" Father_of="//@nodes.0"/>
+  <nodes name="0.4" type="END" label="0.4" Father_of="//@nodes.0"/>
+  <nodes name="0.3.1" type="START" label="0.3.1" Father_of="//@nodes.3"/>
+  <nodes name="_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group__one_or_more_times_" type="OR" label="0.3.2" Father_of="//@nodes.3"/>
+  <nodes name="EndPhaseActions" type="BASIC" label="0.3.3" Father_of="//@nodes.3"/>
+  <nodes name="0.3.4" type="END" label="0.3.4" Father_of="//@nodes.3"/>
+  <nodes name="0.3.2.1" type="START" label="0.3.2.1" Father_of="//@nodes.6"/>
+  <nodes name="_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group_" type="OR" label="0.3.2.2" Father_of="//@nodes.6"/>
+  <nodes name="0.3.2.2.1" type="START" label="0.3.2.2.1" Father_of="//@nodes.10"/>
+  <nodes name="0.3.2.2.2" type="CONDITION" label="0.3.2.2.2" Father_of="//@nodes.10"/>
+  <nodes name="_open_option_InitialPhaseActions_close_option_" type="OR" label="0.3.2.2.3" Father_of="//@nodes.10"/>
+  <nodes name="ReadyPhaseActions" type="BASIC" label="0.3.2.2.4" Father_of="//@nodes.10"/>
+  <nodes name="SetPhaseActions" type="OR" label="0.3.2.2.5" Father_of="//@nodes.10"/>
+  <nodes name="PlayPhaseActions" type="OR" label="0.3.2.2.6" Father_of="//@nodes.10"/>
+  <nodes name="PenalizedPhaseActions" type="BASIC" label="0.3.2.2.7" Father_of="//@nodes.10"/>
+  <nodes name="0.3.2.2.8" type="END" label="0.3.2.2.8" Father_of="//@nodes.10"/>
+  <nodes name="0.3.2.2.3.1" type="START" label="0.3.2.2.3.1" Father_of="//@nodes.13"/>
+  <nodes name="0.3.2.2.3.2" type="CONDITION" label="0.3.2.2.3.2" Father_of="//@nodes.13"/>
+  <nodes name="InitialPhaseActions" type="BASIC" label="0.3.2.2.3.3" Father_of="//@nodes.13"/>
+  <nodes name="0.3.2.2.3.4" type="END" label="0.3.2.2.3.4" Father_of="//@nodes.13"/>
+  <nodes name="0.3.2.2.5.1" type="START" label="0.3.2.2.5.1" Father_of="//@nodes.15"/>
+  <nodes name="SmartScan_one_or_more_times_" type="OR" label="0.3.2.2.5.2" Father_of="//@nodes.15"/>
+  <nodes name="_open_option_ScanForBall_one_or_more_times__close_option_" type="OR" label="0.3.2.2.5.3" Father_of="//@nodes.15"/>
+  <nodes name="Trackball_one_or_more_times_" type="OR" label="0.3.2.2.5.4" Father_of="//@nodes.15"/>
+  <nodes name="0.3.2.2.5.5" type="END" label="0.3.2.2.5.5" Father_of="//@nodes.15"/>
+  <nodes name="0.3.2.2.5.2.1" type="START" label="0.3.2.2.5.2.1" Father_of="//@nodes.24"/>
+  <nodes name="SmartScan" type="BASIC" label="0.3.2.2.5.2.2" Father_of="//@nodes.24"/>
+  <nodes name="0.3.2.2.5.2.3" type="END" label="0.3.2.2.5.2.3" Father_of="//@nodes.24"/>
+  <nodes name="0.3.2.2.5.3.1" type="START" label="0.3.2.2.5.3.1" Father_of="//@nodes.25"/>
+  <nodes name="0.3.2.2.5.3.2" type="CONDITION" label="0.3.2.2.5.3.2" Father_of="//@nodes.25"/>
+  <nodes name="ScanForBall_one_or_more_times_" type="OR" label="0.3.2.2.5.3.3" Father_of="//@nodes.25"/>
+  <nodes name="0.3.2.2.5.3.3.1" type="START" label="0.3.2.2.5.3.3.1" Father_of="//@nodes.33"/>
+  <nodes name="ScanForBall" type="BASIC" label="0.3.2.2.5.3.3.2" Father_of="//@nodes.33"/>
+  <nodes name="0.3.2.2.5.3.3.3" type="END" label="0.3.2.2.5.3.3.3" Father_of="//@nodes.33"/>
+  <nodes name="0.3.2.2.5.3.4" type="END" label="0.3.2.2.5.3.4" Father_of="//@nodes.25"/>
+  <nodes name="0.3.2.2.5.4.1" type="START" label="0.3.2.2.5.4.1" Father_of="//@nodes.26"/>
+  <nodes name="Trackball" type="BASIC" label="0.3.2.2.5.4.2" Father_of="//@nodes.26"/>
+  <nodes name="0.3.2.2.5.4.3" type="END" label="0.3.2.2.5.4.3" Father_of="//@nodes.26"/>
+  <nodes name="0.3.2.2.6.1" type="START" label="0.3.2.2.6.1" Father_of="//@nodes.16"/>
+  <nodes name="0.3.2.2.6.2" type="CONDITION" label="0.3.2.2.6.2" Father_of="//@nodes.16"/>
+  <nodes name="_open_group_ScanField_or_ApproachBall_or_Kick_close_group__one_or_more_times_" type="OR" label="0.3.2.2.6.3" Father_of="//@nodes.16"/>
+  <nodes name="ShootPenalty_one_or_more_times_" type="OR" label="0.3.2.2.6.4" Father_of="//@nodes.16"/>
+  <nodes name="0.3.2.2.6.5" type="END" label="0.3.2.2.6.5" Father_of="//@nodes.16"/>
+  <nodes name="0.3.2.2.6.3.1" type="START" label="0.3.2.2.6.3.1" Father_of="//@nodes.43"/>
+  <nodes name="_open_group_ScanField_or_ApproachBall_or_Kick_close_group_" type="OR" label="0.3.2.2.6.3.2" Father_of="//@nodes.43"/>
+  <nodes name="0.3.2.2.6.3.2.1" type="START" label="0.3.2.2.6.3.2.1" Father_of="//@nodes.47"/>
+  <nodes name="0.3.2.2.6.3.2.2" type="CONDITION" label="0.3.2.2.6.3.2.2" Father_of="//@nodes.47"/>
+  <nodes name="ScanField" type="OR" label="0.3.2.2.6.3.2.3" Father_of="//@nodes.47"/>
+  <nodes name="ApproachBall" type="BASIC" label="0.3.2.2.6.3.2.4" Father_of="//@nodes.47"/>
+  <nodes name="Kick" type="BASIC" label="0.3.2.2.6.3.2.5" Father_of="//@nodes.47"/>
+  <nodes name="0.3.2.2.6.3.2.6" type="END" label="0.3.2.2.6.3.2.6" Father_of="//@nodes.47"/>
+  <nodes name="0.3.2.2.6.3.2.3.1" type="START" label="0.3.2.2.6.3.2.3.1" Father_of="//@nodes.50"/>
+  <nodes name="SmartScan_one_or_more_times__parallel_MoveAround_one_or_more_times_" type="AND" label="0.3.2.2.6.3.2.3.2" Father_of="//@nodes.50"/>
+  <nodes name="0.3.2.2.6.3.2.3.3" type="END" label="0.3.2.2.6.3.2.3.3" Father_of="//@nodes.50"/>
+  <nodes name="0.3.2.2.6.3.2.3.2.1" type="OR" label="0.3.2.2.6.3.2.3.2.1" Father_of="//@nodes.55"/>
+  <nodes name="0.3.2.2.6.3.2.3.2.1.1" type="START" label="0.3.2.2.6.3.2.3.2.1.1" Father_of="//@nodes.57"/>
+  <nodes name="SmartScan_one_or_more_times_" type="OR" label="0.3.2.2.6.3.2.3.2.1.2" Father_of="//@nodes.57"/>
+  <nodes name="0.3.2.2.6.3.2.3.2.1.3" type="END" label="0.3.2.2.6.3.2.3.2.1.3" Father_of="//@nodes.57"/>
+  <nodes name="0.3.2.2.6.3.2.3.2.2" type="OR" label="0.3.2.2.6.3.2.3.2.2" Father_of="//@nodes.55"/>
+  <nodes name="0.3.2.2.6.3.2.3.2.2.1" type="START" label="0.3.2.2.6.3.2.3.2.2.1" Father_of="//@nodes.61"/>
+  <nodes name="MoveAround_one_or_more_times_" type="OR" label="0.3.2.2.6.3.2.3.2.2.2" Father_of="//@nodes.61"/>
+  <nodes name="0.3.2.2.6.3.2.3.2.2.3" type="END" label="0.3.2.2.6.3.2.3.2.2.3" Father_of="//@nodes.61"/>
+  <nodes name="0.3.2.2.6.3.2.3.2.1.2.1" type="START" label="0.3.2.2.6.3.2.3.2.1.2.1" Father_of="//@nodes.59"/>
+  <nodes name="SmartScan" type="BASIC" label="0.3.2.2.6.3.2.3.2.1.2.2" Father_of="//@nodes.59"/>
+  <nodes name="0.3.2.2.6.3.2.3.2.1.2.3" type="END" label="0.3.2.2.6.3.2.3.2.1.2.3" Father_of="//@nodes.59"/>
+  <nodes name="0.3.2.2.6.3.2.3.2.2.2.1" type="START" label="0.3.2.2.6.3.2.3.2.2.2.1" Father_of="//@nodes.63"/>
+  <nodes name="MoveAround" type="BASIC" label="0.3.2.2.6.3.2.3.2.2.2.2" Father_of="//@nodes.63"/>
+  <nodes name="0.3.2.2.6.3.2.3.2.2.2.3" type="END" label="0.3.2.2.6.3.2.3.2.2.2.3" Father_of="//@nodes.63"/>
+  <nodes name="0.3.2.2.6.3.3" type="END" label="0.3.2.2.6.3.3" Father_of="//@nodes.43"/>
+  <nodes name="0.3.2.2.6.4.1" type="START" label="0.3.2.2.6.4.1" Father_of="//@nodes.44"/>
+  <nodes name="ShootPenalty" type="OR" label="0.3.2.2.6.4.2" Father_of="//@nodes.44"/>
+  <nodes name="0.3.2.2.6.4.2.1" type="START" label="0.3.2.2.6.4.2.1" Father_of="//@nodes.73"/>
+  <nodes name="ScanField" type="OR" label="0.3.2.2.6.4.2.2" Father_of="//@nodes.73"/>
+  <nodes name="ApproachBall_one_or_more_times_" type="OR" label="0.3.2.2.6.4.2.3" Father_of="//@nodes.73"/>
+  <nodes name="Kick_one_or_more_times_" type="OR" label="0.3.2.2.6.4.2.4" Father_of="//@nodes.73"/>
+  <nodes name="0.3.2.2.6.4.2.5" type="END" label="0.3.2.2.6.4.2.5" Father_of="//@nodes.73"/>
+  <nodes name="0.3.2.2.6.4.2.2.1" type="START" label="0.3.2.2.6.4.2.2.1" Father_of="//@nodes.75"/>
+  <nodes name="SmartScan_one_or_more_times__parallel_MoveAround_one_or_more_times_" type="AND" label="0.3.2.2.6.4.2.2.2" Father_of="//@nodes.75"/>
+  <nodes name="0.3.2.2.6.4.2.2.3" type="END" label="0.3.2.2.6.4.2.2.3" Father_of="//@nodes.75"/>
+  <nodes name="0.3.2.2.6.4.2.2.2.1" type="OR" label="0.3.2.2.6.4.2.2.2.1" Father_of="//@nodes.80"/>
+  <nodes name="0.3.2.2.6.4.2.2.2.1.1" type="START" label="0.3.2.2.6.4.2.2.2.1.1" Father_of="//@nodes.82"/>
+  <nodes name="SmartScan_one_or_more_times_" type="OR" label="0.3.2.2.6.4.2.2.2.1.2" Father_of="//@nodes.82"/>
+  <nodes name="0.3.2.2.6.4.2.2.2.1.3" type="END" label="0.3.2.2.6.4.2.2.2.1.3" Father_of="//@nodes.82"/>
+  <nodes name="0.3.2.2.6.4.2.2.2.2" type="OR" label="0.3.2.2.6.4.2.2.2.2" Father_of="//@nodes.80"/>
+  <nodes name="0.3.2.2.6.4.2.2.2.2.1" type="START" label="0.3.2.2.6.4.2.2.2.2.1" Father_of="//@nodes.86"/>
+  <nodes name="MoveAround_one_or_more_times_" type="OR" label="0.3.2.2.6.4.2.2.2.2.2" Father_of="//@nodes.86"/>
+  <nodes name="0.3.2.2.6.4.2.2.2.2.3" type="END" label="0.3.2.2.6.4.2.2.2.2.3" Father_of="//@nodes.86"/>
+  <nodes name="0.3.2.2.6.4.2.2.2.1.2.1" type="START" label="0.3.2.2.6.4.2.2.2.1.2.1" Father_of="//@nodes.84"/>
+  <nodes name="SmartScan" type="BASIC" label="0.3.2.2.6.4.2.2.2.1.2.2" Father_of="//@nodes.84"/>
+  <nodes name="0.3.2.2.6.4.2.2.2.1.2.3" type="END" label="0.3.2.2.6.4.2.2.2.1.2.3" Father_of="//@nodes.84"/>
+  <nodes name="0.3.2.2.6.4.2.2.2.2.2.1" type="START" label="0.3.2.2.6.4.2.2.2.2.2.1" Father_of="//@nodes.88"/>
+  <nodes name="MoveAround" type="BASIC" label="0.3.2.2.6.4.2.2.2.2.2.2" Father_of="//@nodes.88"/>
+  <nodes name="0.3.2.2.6.4.2.2.2.2.2.3" type="END" label="0.3.2.2.6.4.2.2.2.2.2.3" Father_of="//@nodes.88"/>
+  <nodes name="0.3.2.2.6.4.2.3.1" type="START" label="0.3.2.2.6.4.2.3.1" Father_of="//@nodes.76"/>
+  <nodes name="ApproachBall" type="BASIC" label="0.3.2.2.6.4.2.3.2" Father_of="//@nodes.76"/>
+  <nodes name="0.3.2.2.6.4.2.3.3" type="END" label="0.3.2.2.6.4.2.3.3" Father_of="//@nodes.76"/>
+  <nodes name="0.3.2.2.6.4.2.4.1" type="START" label="0.3.2.2.6.4.2.4.1" Father_of="//@nodes.77"/>
+  <nodes name="Kick" type="BASIC" label="0.3.2.2.6.4.2.4.2" Father_of="//@nodes.77"/>
+  <nodes name="0.3.2.2.6.4.2.4.3" type="END" label="0.3.2.2.6.4.2.4.3" Father_of="//@nodes.77"/>
+  <nodes name="0.3.2.2.6.4.3" type="END" label="0.3.2.2.6.4.3" Father_of="//@nodes.44"/>
+  <nodes name="0.3.2.3" type="END" label="0.3.2.3" Father_of="//@nodes.6"/>
+  <transitions source="//@nodes.1" target="//@nodes.2" name="0.1TOPlayerSetup"/>
+  <transitions source="//@nodes.2" target="//@nodes.3" name="PlayerSetupTOPlayGame"/>
+  <transitions source="//@nodes.3" target="//@nodes.4" name="PlayGameTO0.4"/>
+  <transitions source="//@nodes.5" target="//@nodes.6" name="0.3.1TO_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group__one_or_more_times_"/>
+  <transitions source="//@nodes.6" target="//@nodes.7" name="_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group__one_or_more_times_TOEndPhaseActions"/>
+  <transitions source="//@nodes.7" target="//@nodes.8" name="EndPhaseActionsTO0.3.4"/>
+  <transitions source="//@nodes.11" target="//@nodes.12" name="0.3.2.2.1TO0.3.2.2.2"/>
+  <transitions source="//@nodes.12" target="//@nodes.13" name="0.3.2.2.2TO_open_option_InitialPhaseActions_close_option_"/>
+  <transitions source="//@nodes.12" target="//@nodes.14" name="0.3.2.2.2TOReadyPhaseActions"/>
+  <transitions source="//@nodes.12" target="//@nodes.15" name="0.3.2.2.2TOSetPhaseActions"/>
+  <transitions source="//@nodes.12" target="//@nodes.16" name="0.3.2.2.2TOPlayPhaseActions"/>
+  <transitions source="//@nodes.12" target="//@nodes.17" name="0.3.2.2.2TOPenalizedPhaseActions"/>
+  <transitions source="//@nodes.17" target="//@nodes.18" name="PenalizedPhaseActionsTO0.3.2.2.8"/>
+  <transitions source="//@nodes.16" target="//@nodes.18" name="PlayPhaseActionsTO0.3.2.2.8"/>
+  <transitions source="//@nodes.15" target="//@nodes.18" name="SetPhaseActionsTO0.3.2.2.8"/>
+  <transitions source="//@nodes.14" target="//@nodes.18" name="ReadyPhaseActionsTO0.3.2.2.8"/>
+  <transitions source="//@nodes.13" target="//@nodes.18" name="_open_option_InitialPhaseActions_close_option_TO0.3.2.2.8"/>
+  <transitions source="//@nodes.19" target="//@nodes.20" name="0.3.2.2.3.1TO0.3.2.2.3.2"/>
+  <transitions source="//@nodes.20" target="//@nodes.21" name="0.3.2.2.3.2TOInitialPhaseActions"/>
+  <transitions source="//@nodes.20" target="//@nodes.22" name="0.3.2.2.3.2TO0.3.2.2.3.4"/>
+  <transitions source="//@nodes.21" target="//@nodes.22" name="InitialPhaseActionsTO0.3.2.2.3.4"/>
+  <transitions source="//@nodes.23" target="//@nodes.24" name="0.3.2.2.5.1TOSmartScan_one_or_more_times_"/>
+  <transitions source="//@nodes.24" target="//@nodes.25" name="SmartScan_one_or_more_times_TO_open_option_ScanForBall_one_or_more_times__close_option_"/>
+  <transitions source="//@nodes.25" target="//@nodes.26" name="_open_option_ScanForBall_one_or_more_times__close_option_TOTrackball_one_or_more_times_"/>
+  <transitions source="//@nodes.26" target="//@nodes.27" name="Trackball_one_or_more_times_TO0.3.2.2.5.5"/>
+  <transitions source="//@nodes.28" target="//@nodes.29" name="0.3.2.2.5.2.1TOSmartScan"/>
+  <transitions source="//@nodes.29" target="//@nodes.29" name="SmartScanTOSmartScan"/>
+  <transitions source="//@nodes.29" target="//@nodes.30" name="SmartScanTO0.3.2.2.5.2.3"/>
+  <transitions source="//@nodes.34" target="//@nodes.35" name="0.3.2.2.5.3.3.1TOScanForBall"/>
+  <transitions source="//@nodes.35" target="//@nodes.35" name="ScanForBallTOScanForBall"/>
+  <transitions source="//@nodes.35" target="//@nodes.36" name="ScanForBallTO0.3.2.2.5.3.3.3"/>
+  <transitions source="//@nodes.31" target="//@nodes.32" name="0.3.2.2.5.3.1TO0.3.2.2.5.3.2"/>
+  <transitions source="//@nodes.32" target="//@nodes.33" name="0.3.2.2.5.3.2TOScanForBall_one_or_more_times_"/>
+  <transitions source="//@nodes.32" target="//@nodes.37" name="0.3.2.2.5.3.2TO0.3.2.2.5.3.4"/>
+  <transitions source="//@nodes.33" target="//@nodes.37" name="ScanForBall_one_or_more_times_TO0.3.2.2.5.3.4"/>
+  <transitions source="//@nodes.38" target="//@nodes.39" name="0.3.2.2.5.4.1TOTrackball"/>
+  <transitions source="//@nodes.39" target="//@nodes.39" name="TrackballTOTrackball"/>
+  <transitions source="//@nodes.39" target="//@nodes.40" name="TrackballTO0.3.2.2.5.4.3"/>
+  <transitions source="//@nodes.41" target="//@nodes.42" name="0.3.2.2.6.1TO0.3.2.2.6.2"/>
+  <transitions source="//@nodes.42" target="//@nodes.43" name="0.3.2.2.6.2TO_open_group_ScanField_or_ApproachBall_or_Kick_close_group__one_or_more_times_"/>
+  <transitions source="//@nodes.42" target="//@nodes.44" name="0.3.2.2.6.2TOShootPenalty_one_or_more_times_"/>
+  <transitions source="//@nodes.44" target="//@nodes.45" name="ShootPenalty_one_or_more_times_TO0.3.2.2.6.5"/>
+  <transitions source="//@nodes.43" target="//@nodes.45" name="_open_group_ScanField_or_ApproachBall_or_Kick_close_group__one_or_more_times_TO0.3.2.2.6.5"/>
+  <transitions source="//@nodes.48" target="//@nodes.49" name="0.3.2.2.6.3.2.1TO0.3.2.2.6.3.2.2"/>
+  <transitions source="//@nodes.49" target="//@nodes.50" name="0.3.2.2.6.3.2.2TOScanField"/>
+  <transitions source="//@nodes.49" target="//@nodes.51" name="0.3.2.2.6.3.2.2TOApproachBall"/>
+  <transitions source="//@nodes.49" target="//@nodes.52" name="0.3.2.2.6.3.2.2TOKick"/>
+  <transitions source="//@nodes.52" target="//@nodes.53" name="KickTO0.3.2.2.6.3.2.6"/>
+  <transitions source="//@nodes.51" target="//@nodes.53" name="ApproachBallTO0.3.2.2.6.3.2.6"/>
+  <transitions source="//@nodes.50" target="//@nodes.53" name="ScanFieldTO0.3.2.2.6.3.2.6"/>
+  <transitions source="//@nodes.54" target="//@nodes.55" name="0.3.2.2.6.3.2.3.1TOSmartScan_one_or_more_times__parallel_MoveAround_one_or_more_times_"/>
+  <transitions source="//@nodes.55" target="//@nodes.56" name="SmartScan_one_or_more_times__parallel_MoveAround_one_or_more_times_TO0.3.2.2.6.3.2.3.3"/>
+  <transitions source="//@nodes.58" target="//@nodes.59" name="0.3.2.2.6.3.2.3.2.1.1TOSmartScan_one_or_more_times_"/>
+  <transitions source="//@nodes.59" target="//@nodes.60" name="SmartScan_one_or_more_times_TO0.3.2.2.6.3.2.3.2.1.3"/>
+  <transitions source="//@nodes.62" target="//@nodes.63" name="0.3.2.2.6.3.2.3.2.2.1TOMoveAround_one_or_more_times_"/>
+  <transitions source="//@nodes.63" target="//@nodes.64" name="MoveAround_one_or_more_times_TO0.3.2.2.6.3.2.3.2.2.3"/>
+  <transitions source="//@nodes.65" target="//@nodes.66" name="0.3.2.2.6.3.2.3.2.1.2.1TOSmartScan"/>
+  <transitions source="//@nodes.66" target="//@nodes.66" name="SmartScanTOSmartScan"/>
+  <transitions source="//@nodes.66" target="//@nodes.67" name="SmartScanTO0.3.2.2.6.3.2.3.2.1.2.3"/>
+  <transitions source="//@nodes.68" target="//@nodes.69" name="0.3.2.2.6.3.2.3.2.2.2.1TOMoveAround"/>
+  <transitions source="//@nodes.69" target="//@nodes.69" name="MoveAroundTOMoveAround"/>
+  <transitions source="//@nodes.69" target="//@nodes.70" name="MoveAroundTO0.3.2.2.6.3.2.3.2.2.2.3"/>
+  <transitions source="//@nodes.46" target="//@nodes.47" name="0.3.2.2.6.3.1TO_open_group_ScanField_or_ApproachBall_or_Kick_close_group_"/>
+  <transitions source="//@nodes.47" target="//@nodes.47" name="_open_group_ScanField_or_ApproachBall_or_Kick_close_group_TO_open_group_ScanField_or_ApproachBall_or_Kick_close_group_"/>
+  <transitions source="//@nodes.47" target="//@nodes.71" name="_open_group_ScanField_or_ApproachBall_or_Kick_close_group_TO0.3.2.2.6.3.3"/>
+  <transitions source="//@nodes.74" target="//@nodes.75" name="0.3.2.2.6.4.2.1TOScanField"/>
+  <transitions source="//@nodes.75" target="//@nodes.76" name="ScanFieldTOApproachBall_one_or_more_times_"/>
+  <transitions source="//@nodes.76" target="//@nodes.77" name="ApproachBall_one_or_more_times_TOKick_one_or_more_times_"/>
+  <transitions source="//@nodes.77" target="//@nodes.78" name="Kick_one_or_more_times_TO0.3.2.2.6.4.2.5"/>
+  <transitions source="//@nodes.79" target="//@nodes.80" name="0.3.2.2.6.4.2.2.1TOSmartScan_one_or_more_times__parallel_MoveAround_one_or_more_times_"/>
+  <transitions source="//@nodes.80" target="//@nodes.81" name="SmartScan_one_or_more_times__parallel_MoveAround_one_or_more_times_TO0.3.2.2.6.4.2.2.3"/>
+  <transitions source="//@nodes.83" target="//@nodes.84" name="0.3.2.2.6.4.2.2.2.1.1TOSmartScan_one_or_more_times_"/>
+  <transitions source="//@nodes.84" target="//@nodes.85" name="SmartScan_one_or_more_times_TO0.3.2.2.6.4.2.2.2.1.3"/>
+  <transitions source="//@nodes.87" target="//@nodes.88" name="0.3.2.2.6.4.2.2.2.2.1TOMoveAround_one_or_more_times_"/>
+  <transitions source="//@nodes.88" target="//@nodes.89" name="MoveAround_one_or_more_times_TO0.3.2.2.6.4.2.2.2.2.3"/>
+  <transitions source="//@nodes.90" target="//@nodes.91" name="0.3.2.2.6.4.2.2.2.1.2.1TOSmartScan"/>
+  <transitions source="//@nodes.91" target="//@nodes.91" name="SmartScanTOSmartScan"/>
+  <transitions source="//@nodes.91" target="//@nodes.92" name="SmartScanTO0.3.2.2.6.4.2.2.2.1.2.3"/>
+  <transitions source="//@nodes.93" target="//@nodes.94" name="0.3.2.2.6.4.2.2.2.2.2.1TOMoveAround"/>
+  <transitions source="//@nodes.94" target="//@nodes.94" name="MoveAroundTOMoveAround"/>
+  <transitions source="//@nodes.94" target="//@nodes.95" name="MoveAroundTO0.3.2.2.6.4.2.2.2.2.2.3"/>
+  <transitions source="//@nodes.96" target="//@nodes.97" name="0.3.2.2.6.4.2.3.1TOApproachBall"/>
+  <transitions source="//@nodes.97" target="//@nodes.97" name="ApproachBallTOApproachBall"/>
+  <transitions source="//@nodes.97" target="//@nodes.98" name="ApproachBallTO0.3.2.2.6.4.2.3.3"/>
+  <transitions source="//@nodes.99" target="//@nodes.100" name="0.3.2.2.6.4.2.4.1TOKick"/>
+  <transitions source="//@nodes.100" target="//@nodes.100" name="KickTOKick"/>
+  <transitions source="//@nodes.100" target="//@nodes.101" name="KickTO0.3.2.2.6.4.2.4.3"/>
+  <transitions source="//@nodes.72" target="//@nodes.73" name="0.3.2.2.6.4.1TOShootPenalty"/>
+  <transitions source="//@nodes.73" target="//@nodes.73" name="ShootPenaltyTOShootPenalty"/>
+  <transitions source="//@nodes.73" target="//@nodes.102" name="ShootPenaltyTO0.3.2.2.6.4.3"/>
+  <transitions source="//@nodes.9" target="//@nodes.10" name="0.3.2.1TO_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group_"/>
+  <transitions source="//@nodes.10" target="//@nodes.10" name="_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group_TO_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group_"/>
+  <transitions source="//@nodes.10" target="//@nodes.103" name="_open_group__open_option_InitialPhaseActions_close_option__or_ReadyPhaseActions_or_SetPhaseActions_or_PlayPhaseActions_or_PenalizedPhaseActions_close_group_TO0.3.2.3"/>
+</IAC:Model>
