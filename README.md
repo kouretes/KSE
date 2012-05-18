@@ -2,9 +2,7 @@ KSE
 ===
 
 
-* *********************************************************************************** *
-*  If you are reading this file, you are ready to edit or study the KSE source code.  *
-* *********************************************************************************** *
+*  If you are reading this file, you are ready to edit or study the KSE source code.  
 
 
 You can see and edit the source code via eclipse.
@@ -37,9 +35,8 @@ Summary of KSE Projects:
 
 
 
-* ****************************************************** *
-*       Create the KSE Application Instructions!!!       *
-* ****************************************************** *
+
+*       Create the KSE Application Instructions!!!      
 
 If you have edited the generator's code you need to:
 
