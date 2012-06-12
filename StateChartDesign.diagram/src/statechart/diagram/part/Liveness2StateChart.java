@@ -180,7 +180,7 @@ public class Liveness2StateChart {
 			father.getChildren().add(tmpNode);
 			int k = 2;
 			for (Iterator<String> iterator = this.findTermsInExpression(
-					expression, ".").iterator(); iterator.hasNext();) {
+					expression, "\\.").iterator(); iterator.hasNext();) {
 				String term = iterator.next();
 				tmpNode = StatechartFactory.eINSTANCE.createNode();
 				tmpNode.setLabel(father.getLabel() + "." + k);
@@ -250,7 +250,7 @@ public class Liveness2StateChart {
 			model.getTransitions().add(tmpTransition);
 			int k = 3;
 			for (Iterator<String> iterator = this.findTermsInExpression(
-					expression, "|").iterator(); iterator.hasNext();) {
+					expression, "\\|").iterator(); iterator.hasNext();) {
 				// the above line creates a bag if there are parallel operators
 				// in the or expression
 				String term = iterator.next();
@@ -349,7 +349,7 @@ public class Liveness2StateChart {
 			model.getTransitions().add(tmpTransition);
 			int k = 1;
 			for (Iterator<String> iterator = this.findTermsInExpression(
-					expression, "||").iterator(); iterator.hasNext();) {
+					expression, "\\|\\|").iterator(); iterator.hasNext();) {
 				String term = iterator.next();
 				tmpNode = StatechartFactory.eINSTANCE.createNode();
 				tmpNode.setLabel(father.getLabel() + ".2." + k);
@@ -421,13 +421,13 @@ public class Liveness2StateChart {
 			myTerms.add(expression);
 			break;
 		case 1:
-			myTerms = this.findTermsInExpression(expression, "||");
+			myTerms = this.findTermsInExpression(expression, "\\|\\|");
 			break;
 		case 2:
-			myTerms = this.findTermsInExpression(expression, "|");
+			myTerms = this.findTermsInExpression(expression, "\\|");
 			break;
 		case 3:
-			myTerms = this.findTermsInExpression(expression, ".");
+			myTerms = this.findTermsInExpression(expression, "\\.");
 			break;
 		}
 		for (Iterator<String> iterator = myTerms.iterator(); iterator.hasNext();) {
@@ -943,12 +943,13 @@ public class Liveness2StateChart {
 	public List<String> findTermsInExpression(String expression,
 			String connector) {
 		List<String> foundTerms = new LinkedList<String>();
-		StringTokenizer t = new StringTokenizer(expression, connector);
+	//	StringTokenizer t = new StringTokenizer(expression, connector);
+		String[] tokens = expression.split(connector);
 		String currentTerm = new String();
-		while (t.hasMoreTokens()) {
+		for(int j=0; j<tokens.length; j++) {
 			int parenthesis = 0;
 			int brackets = 0;
-			currentTerm = currentTerm + t.nextToken();
+			currentTerm = currentTerm + tokens[j];
 			for (int i = 0; i < currentTerm.length(); i++) {
 				if (currentTerm.regionMatches(i, "(", 0, 1))
 					parenthesis++;
