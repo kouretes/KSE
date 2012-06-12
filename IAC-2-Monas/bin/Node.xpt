@@ -25,7 +25,7 @@
 				«IF activity== null -»
 					«EXPAND Activity::Activity»
 				«ENDIF-»
-	IActivity* «ActivityNameInst(label)» = ActivityFactory::Instance()->CreateObject( "«ClassName(name)»" );
+	IActivity* «ActivityNameInst(label)» = ActivityFactory::Instance()->CreateObject( "«ClassName(name)»" , *«ParentNodeNameInst(label)»->GetBlackboard());
 	_activities.push_back( «ActivityNameInst(label)» );			
 	BasicState* «NodeNameInst(label)» = new BasicState( "«NodeNameInst(name)»", «ParentNodeNameInst(label)», «ActivityNameInst(label)» ); //Name:«name»
 	_states.push_back( «NodeNameInst(label)» );
