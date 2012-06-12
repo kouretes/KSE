@@ -871,7 +871,7 @@
          name="KSE">
       <property
             name="windowImages"
-            value="icons/KSE16x16.gif,icons/KSE32x32.gif,icons/KSE64x64.gif,icons/KSE128x128.gif">
+            value="icons/KSE16x16.gif,icons/KSE32x32.gif,icons/KSE48x48.gif,icons/KSE64x64.gif,icons/KSE128x128.gif">
       </property>
       <property
             name="aboutText"

@@ -4,7 +4,7 @@
 <product name="KSE" uid="statechart.diagram.kse" id="StateChartDesign.diagram.windowsProduct" application="StateChartDesign.diagram.StateChartApplication" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="icons/KSE128x128.gif"/>
+      <image path="/StateChartDesign.diagram/icons/KSE128x128.gif"/>
       <text>
          KSE - Kouretes StateChart Editor
 Beta Version 1.0
@@ -24,7 +24,7 @@ by org.eclipse.com , apache.com and ibm.com
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="icons/KSE16x16.gif" i32="icons/KSE32x32.gif" i64="icons/KSE64x64.gif" i128="icons/KSE128x128.gif"/>
+   <windowImages i16="/StateChartDesign.diagram/icons/KSE16x16.gif" i32="/StateChartDesign.diagram/icons/KSE32x32.gif" i48="/StateChartDesign.diagram/icons/KSE48x48.gif" i64="/StateChartDesign.diagram/icons/KSE64x64.gif" i128="/StateChartDesign.diagram/icons/KSE128x128.gif"/>
 
    <splash
       location="StateChartDesign.diagram"
@@ -32,12 +32,14 @@ by org.eclipse.com , apache.com and ibm.com
       startupMessageRect="7,252,445,20"
       startupForegroundColor="000000" />
    <launcher name="KSE">
+      <linux icon="/StateChartDesign.diagram/icons/KSE.xpm"/>
       <solaris/>
       <win useIco="false">
          <bmp
             winSmallLow="/StateChartDesign.diagram/icons/KSE16x16.bmp"/>
       </win>
    </launcher>
+
 
    <vm>
    </vm>

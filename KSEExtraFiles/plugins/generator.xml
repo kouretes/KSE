@@ -3,12 +3,12 @@
     <!--this file was created by Eclipse Runnable JAR Export Wizard-->
     <!--ANT 1.7 is required                                        -->
     <target name="create_run_jar">
-        <jar destfile="/media/ECF41E8CF41E5962/Dropbox/thesis/KSEExtraFiles/plugins/generator.jar" filesetmanifest="mergewithoutmain">
+        <jar destfile="/home/angelica/Desktop/myKSE/KSE/KSEExtraFiles/plugins/generator.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="iac2monas.MainWindowApplication"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
-            <fileset dir="/home/angelica/workspace/IAC-2-Monas/bin"/>
+            <fileset dir="/home/angelica/Desktop/myKSE/KSE/IAC-2-Monas/bin"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.jdt.core_3.7.1.v_B76_R37x.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.jdt.compiler.apt_1.0.400.v0110816-0800.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.jdt.compiler.tool_1.0.100.v_B76_R37x.jar"/>
@@ -38,7 +38,7 @@
             <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.apache.commons.cli_1.2.0.v201105210650.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.emf.mwe2.runtime_2.0.1.v201108020506.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/org.eclipse.xtend.typesystem.emf_1.0.1.v201108020519.jar"/>
-            <fileset dir="/home/angelica/workspace/IACdesign/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/IACdesign_1.0.0.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/angelica/Desktop/eclipse/plugins/StateChartPlugIn_1.0.0.201203091420.jar"/>
         </jar>
     </target>
