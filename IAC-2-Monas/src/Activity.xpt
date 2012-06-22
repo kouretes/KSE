@@ -15,7 +15,7 @@ ACTIVITY_START
 class «ClassName(name)» : public IActivity {
 			
 public:
-	ACTIVITY_CONSTRUCTOR(ClassName(name)»)
+	ACTIVITY_CONSTRUCTOR(«ClassName(name)»)
 	int ACTIVITY_VISIBLE IEX_DIRECTIVE_HOT Execute ();
 	
 	void ACTIVITY_VISIBLE UserInit ();
