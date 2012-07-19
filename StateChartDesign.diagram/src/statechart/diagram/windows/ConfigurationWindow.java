@@ -10,6 +10,7 @@ import java.io.File;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -32,7 +33,8 @@ public class ConfigurationWindow implements ActionListener{
 	JTextField otherText;
 	JTextField genText ;
 	JFrame MainWindow;
-	
+	JFrame command;
+	JTextField comm;
 	public ConfigurationWindow(IAction action,IWorkbenchWindow window){
 		
 		this.action = action;
@@ -43,7 +45,9 @@ public class ConfigurationWindow implements ActionListener{
 	
 
 	public void createConfigurationWindow(){
-		
+		System.out.println("CreateConfigurationWindow");
+		chosenEditor = StateChartApplication.cppeditor;
+		chosenGenerator = StateChartApplication.generator;
 		MainWindow = new JFrame("Configure KSE...");
 		
 		JPanel editor = new JPanel();
@@ -56,36 +60,83 @@ public class ConfigurationWindow implements ActionListener{
 		JButton OK = new JButton("OK");
 		otherText = new JTextField(20);
 		genText = new JTextField(20);
-		JRadioButton geany = new JRadioButton("geany");
+		
+		JRadioButton geany;
+		if(StateChartApplication.cppeditor.equals("geany"))
+			geany = new JRadioButton("geany", true);
+		else
+			geany = new JRadioButton("geany", false);
 		geany.setMnemonic(KeyEvent.VK_B);
 		geany.setActionCommand("geany");
-		geany.setSelected(true);
-
-		JRadioButton eclipse = new JRadioButton("eclipse");
+		
+		JRadioButton eclipse;
+		if(StateChartApplication.cppeditor.equals("eclipse")||StateChartApplication.cppeditor.equals("eclipse.exe"))
+			eclipse = new JRadioButton("eclipse", true);
+		else
+			eclipse = new JRadioButton("eclipse", false);
 		eclipse.setMnemonic(KeyEvent.VK_C);
 		eclipse.setActionCommand("eclipse");
 
-		JRadioButton gedit = new JRadioButton("gedit");
+		JRadioButton gedit;
+		if(StateChartApplication.cppeditor.equals("gedit"))
+			gedit = new JRadioButton("gedit", true);
+		else
+			gedit = new JRadioButton("gedit", false);
 		gedit.setMnemonic(KeyEvent.VK_D);
 		gedit.setActionCommand("gedit");
 
-		JRadioButton kdevelop = new JRadioButton("kdevelop");
+		JRadioButton kdevelop ;
+		if(StateChartApplication.cppeditor.equals("kdevelop"))
+			kdevelop = new JRadioButton("kdevelop", true);
+		else
+			kdevelop = new JRadioButton("kdevelop", false);
 		kdevelop.setMnemonic(KeyEvent.VK_R);
 		kdevelop.setActionCommand("kdevelop");
 		
-		JRadioButton other = new JRadioButton("other: ");
+		JRadioButton other ;
+		if(System.getProperty("os.name").equals("Linux")){
+			if(!StateChartApplication.cppeditor.equals("kdevelop") && !StateChartApplication.cppeditor.equals("gedit")
+					&& !StateChartApplication.cppeditor.equals("geany") && !StateChartApplication.cppeditor.equals("eclipse")){
+				other = new JRadioButton("other: ", true);
+				otherText.setText(StateChartApplication.cppeditor);
+			}else{
+				other = new JRadioButton("other: ", false);
+				otherText.setText("");
+			}
+		}else{
+			if(!StateChartApplication.cppeditor.equals("notepad.exe") && !StateChartApplication.cppeditor.equals("visual")
+					&& !StateChartApplication.cppeditor.endsWith("wordpad.exe")&& !StateChartApplication.cppeditor.equals("eclipse.exe")){ 
+				other = new JRadioButton("other: ", true);
+			otherText.setText(StateChartApplication.cppeditor);
+			}else{
+				other = new JRadioButton("other: ", false);
+				otherText.setText("");
+				}
+		}
 		other.setMnemonic(KeyEvent.VK_R);
 		other.setActionCommand("other");
 
-		JRadioButton notepad = new JRadioButton("Notepad");
+		JRadioButton notepad;
+		if(StateChartApplication.cppeditor.equals("notepad.exe"))
+			notepad = new JRadioButton("Notepad", true);
+		else
+			notepad = new JRadioButton("Notepad", false);
 		notepad.setMnemonic(KeyEvent.VK_R);
 		notepad.setActionCommand("notepad");
 
-		JRadioButton wordpad = new JRadioButton("Wordpad");
+		JRadioButton wordpad;
+		if(StateChartApplication.cppeditor.endsWith("wordpad.exe")) 
+			wordpad = new JRadioButton("Wordpad", true);
+		else
+			wordpad = new JRadioButton("Wordpad", false);
 		wordpad.setMnemonic(KeyEvent.VK_R);
 		wordpad.setActionCommand("wordpad");
 		
-		JRadioButton visual = new JRadioButton("Visual Studio");
+		JRadioButton visual;
+		if(StateChartApplication.cppeditor.equals("visual"))
+			visual = new JRadioButton("Visual Studio", true);
+		else
+			visual = new JRadioButton("Visual Studio", false);
 		visual.setMnemonic(KeyEvent.VK_R);
 		visual.setActionCommand("visual");
 		 //Group the radio buttons.
@@ -141,12 +192,24 @@ public class ConfigurationWindow implements ActionListener{
 		cancel.setActionCommand("CANCEL");
 		OK.setActionCommand("OK");
 		
-		JRadioButton iac2monas = new JRadioButton("Generator for Monas");
+		JRadioButton iac2monas;
+		
+	//	JRadioButton genOther = new JRadioButton("Other: ");
+		
+		JRadioButton genOther; 
+		
+		if(StateChartApplication.generator.endsWith("generator.jar")){ 
+			iac2monas= new JRadioButton("Generator for Monas", true);
+			genOther = new JRadioButton("Other", false);
+		}else{
+			iac2monas= new JRadioButton("Generator for Monas", false);
+			genOther = new JRadioButton("Other", true);
+		}
 		iac2monas.setMnemonic(KeyEvent.VK_R);
 		iac2monas.setActionCommand("iac2monas");
-		JRadioButton genOther = new JRadioButton("Other: ");
 		genOther.setMnemonic(KeyEvent.VK_R);
 		genOther.setActionCommand("genOther");
+		
 		ButtonGroup group2 = new ButtonGroup();
 		group2.add(iac2monas);
 		group2.add(genOther);
@@ -156,7 +219,7 @@ public class ConfigurationWindow implements ActionListener{
 		generator.add(gen);
 		generator.add(iac2monas);
 		generator.add(genOther);
-		generator.add(genText);
+	//	generator.add(genText);
 
 		/*GroupLayout g = new GroupLayout(generator);
 		generator.setLayout(g);
@@ -187,6 +250,34 @@ public class ConfigurationWindow implements ActionListener{
 		MainWindow.setVisible(true);
 	}
 
+	public void createCommandWindow(){
+		command = new JFrame("Please write the neccessary command!");
+		JLabel lab = new JLabel("Command : ");
+		comm = new JTextField(30);
+		JPanel up = new JPanel();
+		JPanel down = new JPanel();
+		JButton cancel = new JButton("Cancel");
+		JButton OK = new JButton("OK");
+		up.setLayout(new FlowLayout(FlowLayout.CENTER));
+		down.setLayout(new FlowLayout(FlowLayout.CENTER));
+		command.setLayout(new BorderLayout());
+		up.add(lab);
+		up.add(comm);
+		down.add(cancel);
+		down.add(OK);
+	
+		command.add(up, BorderLayout.NORTH);
+		command.add(down, BorderLayout.SOUTH);
+		cancel.setActionCommand("CANCEL_COMMAND");
+		OK.setActionCommand("OK_COMMAND");
+		cancel.addActionListener(this);
+		OK.addActionListener(this);	
+		command.pack();
+		command.setLocation(250, 250);
+		command.setVisible(true);
+	}
+	
+	
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getActionCommand().equals("geany")){ 
@@ -198,7 +289,10 @@ public class ConfigurationWindow implements ActionListener{
 			return;
 		}
 		if(e.getActionCommand().equals("eclipse")){ 
-			chosenEditor = "eclipse.exe";
+			if(System.getProperty("os.name").equals("Linux"))
+				chosenEditor = "eclipse";
+			else
+				chosenEditor = "eclipse.exe";
 			return;
 		}
 		if(e.getActionCommand().equals("kdevelop")){ 
@@ -239,29 +333,81 @@ public class ConfigurationWindow implements ActionListener{
 				chosenEditor = otherText.getText();
 			}
 			if(chosenGenerator.equals("other")){
-				if(genText.getText()==null){
-					JOptionPane.showMessageDialog(null, "Please fill the text field with the execution command for your code generator.\nPlease notice that the execution will have two arguments, the model's path and the source code folder's path.");
+			//	if(genText.getText()==null){
+			//		JOptionPane.showMessageDialog(null, "Please fill the text field with the execution command for your code generator.\nPlease notice that the execution will have two arguments, the model's path and the source code folder's path.");
+			//		return;
+			//	}
+			//	chosenGenerator = genText.getText();
+				
+				JFileChooser generationChooser = new JFileChooser();
+				int retval = generationChooser.showOpenDialog(null);
+				if (retval == JFileChooser.APPROVE_OPTION) {
+					MainWindow.setVisible(false);
+					chosenGenerator = generationChooser.getSelectedFile().getAbsolutePath();
+					int option = JOptionPane.showConfirmDialog(null, "Please write any execution command if neccessary \nif jar please add \"java -jar \" with the neccessary spaces");
+					if(option==0){
+						createCommandWindow();
+						return;
+					}else if(option==1){
+						if(chosenEditor==null){
+							if(System.getProperty("os.name").equals("Linux"))
+								chosenEditor = "gedit";
+							else
+								chosenEditor = "notepad.exe";
+						}
+						System.out.println("Editor "+ chosenEditor + " generator "+chosenGenerator);
+						StateChartApplication.writeConfiguration(chosenGenerator, chosenEditor);
+						StateChartApplication.readConfiguration();
+						MainWindow.setVisible(false);
+						return;
+					}else{
+						MainWindow.setVisible(true);
+						return;
+					}
+				}else{
+					JOptionPane.showMessageDialog(null, "You haven't selected a generator!");
+					MainWindow.setVisible(true);
 					return;
 				}
-				chosenGenerator = genText.getText();
+			
+			}else{
+				if(chosenEditor==null){
+					if(System.getProperty("os.name").equals("Linux"))
+						chosenEditor = "gedit";
+					else
+						chosenEditor = "notepad.exe";
+				}
+					
+				if(chosenGenerator==null)
+					chosenGenerator = "iac2monas";
+				System.out.println("Editor "+ chosenEditor + " generator "+chosenGenerator);
+				StateChartApplication.writeConfiguration(chosenGenerator, chosenEditor);
+				StateChartApplication.readConfiguration();
+				MainWindow.setVisible(false);
+				return;
 			}
+		}
+		if(e.getActionCommand().equals("CANCEL")){ 
+			MainWindow.setVisible(false);
+			return;
+		}
+		if(e.getActionCommand().equals("CANCEL_COMMAND")){ 
+			command.setVisible(false);
+			MainWindow.setVisible(true);
+			return;
+		}
+		if(e.getActionCommand().equals("OK_COMMAND")){ 
+			command.setVisible(false);
 			if(chosenEditor==null){
 				if(System.getProperty("os.name").equals("Linux"))
 					chosenEditor = "gedit";
 				else
-					chosenEditor = "Notepad";
+					chosenEditor = "notepad.exe";
 			}
-				
-			if(chosenGenerator==null)
-				chosenGenerator = "iac2monas";
+			chosenGenerator = comm.getText()+chosenGenerator;
 			System.out.println("Editor "+ chosenEditor + " generator "+chosenGenerator);
 			StateChartApplication.writeConfiguration(chosenGenerator, chosenEditor);
 			StateChartApplication.readConfiguration();
-			MainWindow.setVisible(false);
-			return;
-		}
-		if(e.getActionCommand().equals("CANCEL")){ 
-			MainWindow.setVisible(false);
 			return;
 		}
 	}
