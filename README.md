@@ -13,7 +13,8 @@ Necessary applications and packages:
 
   -- Java 6 minimum
   
-  -- Eclipse Modeling Components release
+  -- Eclipse Modeling Components release Indigo or newer, linux users might need to download it
+	 from the elcipse sites rather than use the synaptic package manager for installation
   
   -- EGF SDK
   
