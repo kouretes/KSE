@@ -15,24 +15,29 @@
 // «name»
 class «ActionName(modelname+source.label+target.label)» : public statechart_engine::
 			«IF TE.contains("TimeoutAction")-» 
-				TimeoutAction {
-		/* «getActionOfExpression(TE)» */
-	public:	«ActionName(modelname+source.label+target.label)»() «CreateVarTimeoutActionExpr(TE)»
+	TimeoutAction
+	{
+	/* «getActionOfExpression(TE)» */
+public:	«ActionName(modelname+source.label+target.label)»() «CreateVarTimeoutActionExpr(TE)»
 			«ELSE -»
-				IAction {
-		/* «getActionOfExpression(TE)» */
-	public:
-	void UserInit () { }
+	IAction
+	{
+	/* «getActionOfExpression(TE)» */
+pubic:
+	void UserInit () 
+	{ 
+	}
 
-	int Execute() {
+	int Execute()
+	{
 «CreateVarActionExpr(TE)»
 «ExecuteActionExpr(TE)»
-		return 0;
-    }
-			«ENDIF-»
+	return 0;
+   	}
+«ENDIF-»
 };
 
-		«ENDFILE»
+«ENDFILE»
 	IAction* «ActionNameInst(modelname+source.label+target.label)» = new «ActionName(modelname+source.label+target.label)»;
 	_actions.push_back( «ActionNameInst(modelname+source.label+target.label)» );
 	«ENDIF-»

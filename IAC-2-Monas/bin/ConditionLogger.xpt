@@ -6,24 +6,28 @@
 	«IF HasCondition(TE)-»
 		«FILE TransitionName(modelname+source.label+target.label)+".h" transitions_outlet»
 #include "architecture/statechartEngine/ICondition.h"
-#include "messages/AllMessagesHeader.h"		
-#include "tools/BehaviorConst.h"	
+#include "messages/AllMessagesHeader.h"
+#include "tools/BehaviorConst.h"
 #include "tools/logger.h"
 #include "tools/toString.h"
 // «name»
-class «ConditionName(modelname+source.label+target.label)» : public statechart_engine::ICondition {		
+class «ConditionName(modelname+source.label+target.label)» : public statechart_engine::ICondition
+{
 public:
-	void UserInit () {
-«InitVarCondExpr(TE)»
+	void UserInit ()
+	{
+	«InitVarCondExpr(TE)»
 	}
 
-	bool Eval() {
-		/* «getConditionOfExpression(TE)» */
+	bool Eval()
+	{
+	/* «getConditionOfExpression(TE)» */
 «ReadVarCondExpr(TE)»
 		«EvalCondExprLogger(TE, name)»
     }
 };
-		«ENDFILE»
+
+«ENDFILE»
 	ICondition* «ConditionNameInst(modelname+source.label+target.label)» = new «ConditionName(modelname+source.label+target.label)»;
 	_conditions.push_back( «ConditionNameInst(modelname+source.label+target.label)» );
 	«ENDIF-»

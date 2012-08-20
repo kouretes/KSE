@@ -6,7 +6,8 @@
 	«IF HasEvent(TE) || HasCondition(TE) || HasAction(TE)»
 		«FILE "transitionHeaders.h"»
 #include "transitions/«TransitionName(modelname+source.label+target.label)+".h"»"
-		«ENDFILE»
+
+«ENDFILE»
 	«ENDIF»
 «ENDDEFINE»
 
