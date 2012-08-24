@@ -72,7 +72,7 @@ private:
 
 using namespace statechart_engine;
 
-namespace 
+namespace
 {
 	StatechartRegistrar<«ClassName(name)»>::Type temp("«ClassName(name)»");
 }
@@ -85,7 +85,7 @@ namespace
 	
 }
 
-«ClassName(name)»::~«ClassName(name)»() 
+«ClassName(name)»::~«ClassName(name)»()
 {
 	for ( StateCont::iterator it = _states.begin(); it != _states.end(); it++ )
 		delete (*it);
@@ -106,7 +106,8 @@ void «ClassName(name)»::Start ()
 	_statechart->Start();
 }
 
-void «ClassName(name)»::Stop () {
+void «ClassName(name)»::Stop ()
+{
 	_statechart->Stop();
 }
 

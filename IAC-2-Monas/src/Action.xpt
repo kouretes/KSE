@@ -16,12 +16,12 @@
 class «ActionName(modelname+source.label+target.label)» : public statechart_engine::
 			«IF TE.contains("TimeoutAction")-» 
 	TimeoutAction
-	{
+{
 	/* «getActionOfExpression(TE)» */
 public:	«ActionName(modelname+source.label+target.label)»() «CreateVarTimeoutActionExpr(TE)»
 			«ELSE -»
 	IAction
-	{
+{
 	/* «getActionOfExpression(TE)» */
 pubic:
 	void UserInit () 
