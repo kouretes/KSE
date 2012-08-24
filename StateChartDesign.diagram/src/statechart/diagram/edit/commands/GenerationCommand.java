@@ -45,7 +45,7 @@ public class GenerationCommand extends AbstractCommand implements ICommand {
 	protected CommandResult doExecuteWithResult(
 			IProgressMonitor progressMonitor, IAdaptable info)
 			throws ExecutionException {
-		
+			File dir = new File("");
 		      try {
 		    		if(!StateChartApplication.modelURL.contains(this.fileName)){
 		    			
@@ -68,18 +68,18 @@ public class GenerationCommand extends AbstractCommand implements ICommand {
 					
 					Runtime rt = Runtime.getRuntime();
 	            	 
-					File dir = new File(activityFile.getParent());
+					dir = new File(activityFile.getParent());
 					Process pr;
 					if(System.getProperty("os.name").equals("Linux")){
-						JOptionPane.showMessageDialog(null, StateChartApplication.generator+" "+ fileForGeneration.getAbsolutePath()+ " "+ dir.getAbsolutePath());
+					
 						pr = rt.exec(StateChartApplication.generator+" "+ fileForGeneration.getAbsolutePath()+ " "+ dir.getAbsolutePath());
 					}
 					else{
-						JOptionPane.showMessageDialog(null, StateChartApplication.generator+" "+ fileForGeneration.getAbsolutePath()+ " "+ dir.getAbsolutePath());
+					
 						String[] command=  {StateChartApplication.generator+" \""+ fileForGeneration.getAbsolutePath()+ "\" \""+ dir.getAbsolutePath()+"\""};
 						pr = rt.exec(command);
 					}
-					//Process pr = rt.exec("java -jar /home/angelica/Desktop/generator.jar "+ fileForGeneration.getAbsolutePath()+ " "+ dir.getAbsolutePath());
+					
 					BufferedReader input = new BufferedReader(new InputStreamReader(pr.getErrorStream()));
 		            	  
 	                String line=null;
@@ -92,11 +92,12 @@ public class GenerationCommand extends AbstractCommand implements ICommand {
 	            	  // TODO Auto-generated catch block
 	            	  e.printStackTrace();
 	            	  JOptionPane.showMessageDialog(null, "Error in Generation");
+	            	  return CommandResult.newErrorCommandResult("Error in Generation!!!");
 	              }
 		      TransactionalEditingDomain domain = (TransactionalEditingDomain)
 						AdapterFactoryEditingDomain.getEditingDomainFor(model);
 
-					GenerationTransanctionalCommand cmd = new GenerationTransanctionalCommand(domain, model, fileName, this);
+					GenerationTransanctionalCommand cmd = new GenerationTransanctionalCommand(domain, model, fileName,dir.getAbsolutePath(), this);
 					cmd.execute(progressMonitor, info);
 					this.setResult(CommandResult.newOKCommandResult());
 		return CommandResult.newOKCommandResult();
